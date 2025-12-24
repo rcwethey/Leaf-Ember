@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4jxrw8i8fd7q"]
+
+[ext_resource type="Script" uid="uid://co3sl01ju8w0a" path="res://Scripts/PlayerController.cs" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dkpahysxaakct" path="res://Scripts/SpringArm3d.cs" id="2_cvnsp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[sub_resource type="Skin" id="Skin_onrkg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hqtel"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
+
+[node name="Player" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_onrkg")
+CameraPath = NodePath("SpringArm3D/Camera3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_onrkg")
+skin = SubResource("Skin_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visibility_parent = NodePath("../MeshInstance3D")
+shape = SubResource("SphereShape3D_hqtel")
+debug_color = Color(0.13210893, 0.5958696, 0.68578285, 0.627451)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_cvnsp")
+spring_length = 3.0
+script = ExtResource("2_cvnsp")
+MaxPitch = 6.0
+CameraPath = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 3.5)

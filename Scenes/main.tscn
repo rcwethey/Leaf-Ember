@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dx84hjams2p7x"]
+
+[ext_resource type="Script" uid="uid://dvhwgnshf2rn8" path="res://Scripts/Main.cs" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d4jxrw8i8fd7q" path="res://Scenes/player.tscn" id="2_0xm2m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
+
+[sub_resource type="Sky" id="Sky_1bvp3"]
+sky_material = SubResource("ProceduralSkyMaterial_h2yge")
+process_mode = 2
+
+[sub_resource type="Environment" id="Environment_lquwl"]
+background_mode = 2
+background_color = Color(0, 0.4627451, 0.5764706, 1)
+sky = SubResource("Sky_1bvp3")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0, 0, 0.7607843)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lquwl")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+size = Vector3(30, 1, 30)
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -15)
+size = Vector3(30, 5, 1)
+material = SubResource("StandardMaterial3D_h2yge")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15)
+size = Vector3(30, 5, 1)
+material = SubResource("StandardMaterial3D_h2yge")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 0)
+size = Vector3(1, 5, 30)
+material = SubResource("StandardMaterial3D_h2yge")
+
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
