@@ -1,3 +1,4 @@
+
 using Godot;
 
 public partial class PlayerController : CharacterBody3D
@@ -12,21 +13,37 @@ public partial class PlayerController : CharacterBody3D
 	private Camera3D _camera;
 	private double _logTimer = 0;
 
+    private InputComponent _inputComponent;
+    private MoveComponent _moveComponent;
+
 	public override void _Ready()
 	{
-		_camera = GetNode<Camera3D>("SpringArm3D/Camera3D");
+		_camera = GetNodeOrNull<Camera3D>("SpringArm3D/Camera3D");
+		if (_camera == null)
+		{
+			GD.PrintErr("Camera3D node not found in SpringArm3D. Please ensure the scene has a Camera3D as a child of SpringArm3D.");
+			return;		
+		}
+
+        // Add or get components
+        _inputComponent = GetNodeOrNull<InputComponent>("InputComponent");
+        if (_inputComponent == null)
+        {
+            _inputComponent = new InputComponent();
+            AddChild(_inputComponent);
+        }
+
+        _moveComponent = GetNodeOrNull<MoveComponent>("MoveComponent");
+        if (_moveComponent == null)
+        {
+            _moveComponent = new MoveComponent();
+            AddChild(_moveComponent);
+        }
 	}
 
 
 	public override void _PhysicsProcess(double delta)
 	{
-		// _logTimer += delta;
-		// if (_logTimer >= 0.2) // every 0.2s
-		// {
-		// 	_logTimer = 0;
-		// 	GD.Print($"pos={GlobalPosition}  vel={Velocity}  onFloor={IsOnFloor()}");
-		// }
-
 		if (!IsOnFloor())
 			Velocity += Vector3.Down * Gravity * (float)delta;
 
@@ -35,31 +52,29 @@ public partial class PlayerController : CharacterBody3D
 			Velocity = new Vector3(Velocity.X, JumpVelocity, Velocity.Z);
 		}
 
-		Vector2 input = Input.GetVector("move_left", "move_right", "move_back", "move_forward");
+		// Update input component
+		_inputComponent._Process(delta);
 
-		// camera-relative basis (use Camera3D if you can, else pivot)
+		// camera-relative basis
 		Vector3 forward = -_camera.GlobalTransform.Basis.Z;
 		Vector3 right = _camera.GlobalTransform.Basis.X;
-
 		forward.Y = 0;
 		right.Y = 0;
-
 		forward = forward.Normalized();
 		right = right.Normalized();
 
+		Vector2 input = _inputComponent.MovementInput;
 		Vector3 direction = forward * input.Y + right * input.X;
 		if (direction.Length() > 1f)
 		{
 			direction = direction.Normalized();
 		}
-		else
+
+		// Use MoveComponent to move
+		if (_moveComponent != null)
 		{
-			direction.MoveToward(Vector3.Zero, MoveSpeed * (float)delta);
+			Velocity = _moveComponent.CalculateVelocity(Velocity, direction, (float)delta);
+			MoveAndSlide();
 		}
-
-		Vector3 targetVelocity = direction * MoveSpeed;
-		Velocity = Velocity.Lerp(new Vector3(targetVelocity.X, Velocity.Y, targetVelocity.Z), Acceleration * (float)delta);
-
-		MoveAndSlide();
 	}
 }
