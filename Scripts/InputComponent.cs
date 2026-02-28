@@ -7,7 +7,7 @@ public partial class InputComponent : Node
 
     public void UpdateInput()
     {
-        MoveDirection = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        MoveDirection = Input.GetVector("move_left", "move_right", "move_forward", "move_backward");
         IsJumpPressed = Input.IsActionPressed("jump");
     }
 
