@@ -8,6 +8,7 @@ public partial class MoveComponent : Node
     [Export] public float Speed = 4.0f;
     [Export] public float Gravity = 9.8f;
     [Export] public float JumpVelocity = 4.5f;
+    [Export] public float RotationSpeed = 8.0f;
 
     public Vector2 Direction = Vector2.Zero;
     public bool WantsToJump = false;
@@ -36,5 +37,14 @@ public partial class MoveComponent : Node
 
         CharacterBody.Velocity = velocity;
         CharacterBody.MoveAndSlide();
+
+        if (Direction.LengthSquared() > 0.001f)
+        {
+            // Rotate the model to face the movement direction
+            float targetAngle = Mathf.Atan2(Direction.X, Direction.Y);
+            float currentAngle = Model.Rotation.Y;
+            float newAngle = Mathf.LerpAngle(currentAngle, targetAngle, RotationSpeed * (float)delta);
+            Model.Rotation = new Vector3(Model.Rotation.X, newAngle, Model.Rotation.Z);
+        }
     }
 }
