@@ -1,6 +1,6 @@
 # Leaf economy and terroir
 
-**Status:** Canonical direction; detailed flavor modeling remains open
+**Status:** Canonical direction
 **Last reviewed:** 2026-08-02
 
 ## Core rule
@@ -125,6 +125,6 @@ Producing entirely estate-grown or single-origin cigars is a meaningful creative
 - [Habanos: shade-grown tobacco](https://www.habanos.com/en/tabaco-tapado-shade-grown/) - cultivation by intended function, curing, early processing, and transfer from grower to leaf-processing organization
 - [University of Kentucky: Connecticut Broadleaf production](https://publications.mgcafe.uky.edu/agr-258) - an example of a known cigar cultivar grown in another suitable region, supporting a flexible rather than deterministic land model
 
-## Deferred boundary
+## Sensory boundary
 
-This document establishes where leaf character comes from and how lots move through the economy. It does not define the final flavor descriptors, sensory UI, tasting uncertainty, blend interaction model, or quality calculation. Those belong to the next design phase.
+This document establishes where leaf character comes from and how lots move through the economy. [`FLAVOR_AND_SENSORY.md`](FLAVOR_AND_SENSORY.md) defines the sensory vocabulary and perception model; [`PROCESS_TRANSFORMATION.md`](PROCESS_TRANSFORMATION.md) defines how processing changes expression; and [`BLENDING_AND_RECIPES.md`](BLENDING_AND_RECIPES.md) defines component interaction.

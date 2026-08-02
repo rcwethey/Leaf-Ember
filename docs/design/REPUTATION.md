@@ -94,4 +94,4 @@ Feedback can be incomplete, subjective, biased, or contradictory. The player lea
 - Make mistakes recoverable through honest action and sustained improvement.
 - Let named characters remember consequential choices.
 
-The exact dimensions, visibility rules, and progression model will be designed after the flavor-profile system establishes how cigars are experienced and discussed.
+The flavor system now establishes how cigars are experienced and discussed. Exact reputation dimensions, visibility rules, and progression must be designed alongside the market and character systems so audience response remains grounded in named people and actual releases.

@@ -29,4 +29,6 @@ Build a deeply embodied craftsmanship and management RPG centered on premium cig
 
 ## Current design focus
 
-The next unresolved system is flavor profiles and sensory learning. Do not implement a final cigar-quality score or blend-resolution formula until that design is canonical.
+The cigar-craft loop now has canonical direction from leaf processing through tasting and revision. Numerical tuning must preserve those documents and must not introduce a universal cigar-quality score.
+
+The next unresolved system is the market and economy: sales channels, buyers, pricing, contracts, cash flow, release allocation, and the consequences of commercial demand. The character and relationship model follows closely because trade, teaching, and reputation all operate through named people.

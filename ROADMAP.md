@@ -25,16 +25,36 @@ The roadmap serves the canonical vision. It should validate the cigar-craft loop
 - [x] Terroir, crop allocation, sourcing, and leaf-economy direction
 - [x] Audience-specific reputation direction
 
-## Design gate 1 - flavor and sensory model
+## Completed - design gate 1: cigar craft
 
-- [ ] Define the flavor-profile vocabulary and data model
-- [ ] Separate strength, body, aroma, taste, construction, and subjective perception
-- [ ] Define blend interactions and evolution through a cigar
-- [ ] Define player learning, uncertainty, tasting records, and diagnostic feedback
-- [ ] Define how characters perceive and describe the same cigar differently
-- [ ] Publish a canonical flavor-system design document
+- [x] Define the flavor vocabulary and conceptual data model
+- [x] Separate strength, body, aroma, taste, construction, expression, and perception
+- [x] Define transformation through curing, fermentation, resting, and aging
+- [x] Define blend interactions, recipes, predictions, and scaling
+- [x] Define personal construction, artisan execution, and quality control
+- [x] Define tasting, learning, uncertainty, feedback, diagnosis, and revision
+- [x] Publish and cross-link the canonical cigar-system documents
 
-Do not implement a final quality formula or blend evaluator before this gate is complete.
+Numerical calibration remains prototype work and must preserve the canonical separation of technical quality, intent, perception, consistency, and preference.
+
+## Active - design gate 2: market and economy
+
+- [ ] Define sales channels and named buyer roles
+- [ ] Define the release, allocation, pricing, order, and payment lifecycle
+- [ ] Define operating costs, cash flow, credit, aging inventory, and financial pressure
+- [ ] Define demand, scarcity, unsold stock, repeat orders, and market feedback
+- [ ] Connect crop sales and sourced-leaf purchasing to house production
+- [ ] Decide the abstraction level for export, logistics, taxation, and regulation
+- [ ] Publish a canonical market-and-economy document
+
+## Queued - design gate 3: characters and relationships
+
+- [ ] Define relationship dimensions and memory
+- [ ] Define artisan recruitment, training, specialties, ambitions, conflict, and departure
+- [ ] Define grower, buyer, critic, competitor, and community relationship patterns
+- [ ] Define authored versus systemic character content
+- [ ] Define the intended scope of friendship, family, and romance
+- [ ] Publish a canonical character-and-relationship document
 
 ## Milestone 1 - embodied finca foundation
 
@@ -45,21 +65,24 @@ Do not implement a final quality formula or blend evaluator before this gate is 
 - [ ] Provenance-aware inventory and lot inspection
 - [ ] Save and reload the player, calendar, estate, and lot state
 
+This milestone can proceed while later design gates are being completed, provided it does not silently resolve their open questions.
+
 ## Milestone 2 - cigar-development prototype
 
 - [ ] Provide several authored leaf lots with distinct provenance
-- [ ] Blend-intent and recipe notebook
+- [ ] Implement the compact first flavor and process data model
+- [ ] Blend-intent and versioned recipe notebook
 - [ ] Prototype preparation and rolling interaction
-- [ ] Construction evaluation
-- [ ] Sensory evaluation based on the approved flavor model
-- [ ] Revision history and comparison between prototypes
+- [ ] Construction evaluation and hard quality-control evidence
+- [ ] Focused tasting, intent comparison, diagnosis, and revision
+- [ ] Compare two prototype versions without a universal quality score
 
 ## Milestone 3 - first release
 
 - [ ] Commit a recipe and finite leaf allocation
 - [ ] Produce and age a tiny batch
 - [ ] Package and present the release
-- [ ] Sell or submit it to an initial named buyer
+- [ ] Sell or submit it to an initial named buyer using the approved economy model
 - [ ] Receive contextual feedback and update money, knowledge, access, and reputation
 
 ## Milestone 4 - estate crop to cured lot

@@ -1,6 +1,6 @@
 # Tobacco system
 
-**Status:** Canonical data principles; detailed sensory model remains open
+**Status:** Canonical data and sensory principles
 **Last reviewed:** 2026-08-02
 
 ## Core principle
@@ -57,8 +57,16 @@ No two cigars should be assumed identical merely because they share a recipe. In
 
 An approved cigar specification records intent and acceptable variation. It does not overwrite the actual history of a batch.
 
-## Deferred sensory model
+## Sensory authority
 
-Do not add a single generic flavor or quality float as a placeholder for final design. The next design phase will define sensory dimensions, blend interactions, perception, uncertainty, evolution during smoking, and player learning.
+Flavor, perception, blend interaction, and diagnosis are defined by:
 
-See [`design/LEAF_ECONOMY.md`](design/LEAF_ECONOMY.md) for sourcing and allocation and [`design/OPEN_QUESTIONS.md`](design/OPEN_QUESTIONS.md) for the flavor-system requirements.
+- [`design/FLAVOR_AND_SENSORY.md`](design/FLAVOR_AND_SENSORY.md)
+- [`design/PROCESS_TRANSFORMATION.md`](design/PROCESS_TRANSFORMATION.md)
+- [`design/BLENDING_AND_RECIPES.md`](design/BLENDING_AND_RECIPES.md)
+- [`design/CONSTRUCTION.md`](design/CONSTRUCTION.md)
+- [`design/TASTING_AND_DIAGNOSIS.md`](design/TASTING_AND_DIAGNOSIS.md)
+
+Numerical calibration remains open, but implementations must preserve separate experience dimensions, hidden expression versus taster perception, staged evolution, diagnosis, and audience-specific judgment. Do not introduce a single generic flavor or cigar-quality value.
+
+See [`design/LEAF_ECONOMY.md`](design/LEAF_ECONOMY.md) for sourcing and allocation.

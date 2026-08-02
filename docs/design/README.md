@@ -13,8 +13,13 @@ This directory turns the creative direction into implementation constraints. Des
 4. [`CRAFT_AND_GROWTH.md`](CRAFT_AND_GROWTH.md) - personal work, delegation, artisans, and expansion
 5. [`TIME_AND_PIPELINE.md`](TIME_AND_PIPELINE.md) - calendar philosophy and overlapping production
 6. [`LEAF_ECONOMY.md`](LEAF_ECONOMY.md) - terroir, crop allocation, sourcing, and trade
-7. [`REPUTATION.md`](REPUTATION.md) - audiences, relationships, and house identity
-8. [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) - unresolved systems and the next design work
+7. [`PROCESS_TRANSFORMATION.md`](PROCESS_TRANSFORMATION.md) - curing, fermentation, resting, and aging
+8. [`FLAVOR_AND_SENSORY.md`](FLAVOR_AND_SENSORY.md) - expression, perception, vocabulary, and evaluation
+9. [`BLENDING_AND_RECIPES.md`](BLENDING_AND_RECIPES.md) - blend interactions, prototypes, specifications, and scaling
+10. [`CONSTRUCTION.md`](CONSTRUCTION.md) - personal rolling, physical results, artisan skill, and quality control
+11. [`TASTING_AND_DIAGNOSIS.md`](TASTING_AND_DIAGNOSIS.md) - tasting sessions, feedback, hypotheses, and revision
+12. [`REPUTATION.md`](REPUTATION.md) - audiences, relationships, and house identity
+13. [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) - unresolved systems and the next design work
 
 System implementation notes under `docs/` must conform to this design layer. `ROADMAP.md` determines sequence; it does not overrule the vision.
 
@@ -28,6 +33,6 @@ When a canonical decision changes, update every affected document in the same ch
 
 ## Current design boundary
 
-The setting, estate structure, growth philosophy, time philosophy, production paths, leaf economy, and high-level reputation direction are canonical.
+The setting, estate structure, growth philosophy, time philosophy, production paths, leaf economy, process transformation, flavor and perception, blending, personal construction, tasting, and high-level reputation direction are canonical.
 
-The detailed flavor-profile and sensory-learning system is intentionally unresolved. It is the next design focus and should be documented before implementing blend evaluation or cigar-quality scoring.
+Numerical formulas, exact thresholds, gesture details, and interface layouts require prototypes, but those prototypes must honor the canonical model. The market and economy is the next design focus.

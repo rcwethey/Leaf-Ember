@@ -57,6 +57,14 @@ The goal is expressive estate tobacco, not maximum field count. Routine care bec
 
 The player discovers excellence; the house learns to reproduce it. See [`docs/design/CRAFT_AND_GROWTH.md`](docs/design/CRAFT_AND_GROWTH.md).
 
+## Cigar-system authorities
+
+- [`docs/design/PROCESS_TRANSFORMATION.md`](docs/design/PROCESS_TRANSFORMATION.md) defines curing, fermentation, resting, and aging.
+- [`docs/design/FLAVOR_AND_SENSORY.md`](docs/design/FLAVOR_AND_SENSORY.md) defines expression, perception, vocabulary, and evaluation.
+- [`docs/design/BLENDING_AND_RECIPES.md`](docs/design/BLENDING_AND_RECIPES.md) defines prototype blending, predictions, recipes, and specifications.
+- [`docs/design/CONSTRUCTION.md`](docs/design/CONSTRUCTION.md) defines personal rolling, physical results, and artisan execution.
+- [`docs/design/TASTING_AND_DIAGNOSIS.md`](docs/design/TASTING_AND_DIAGNOSIS.md) defines the observation, feedback, diagnosis, and revision loop.
+
 ## Daily rhythm
 
 The preferred day is deliberate rather than frantic:
