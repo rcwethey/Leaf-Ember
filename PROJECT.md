@@ -37,4 +37,6 @@ Characters and relationships now have canonical direction: multidimensional bond
 
 Facilities and estate progression now have canonical direction: a neglected but viable opening, a semi-authored compact finca, capability-focused improvements, soft capacity, readable environmental risk, game-first abstraction, and visible growth without factory sprawl.
 
-The next unresolved system is knowledge and long-term progression: how player understanding, artisan skill, house capability, access, reputation, and years of accumulated work develop separately and form a legacy.
+Knowledge and long-term progression now have canonical direction: evidence-based understanding, specific technique, institutional house standards, contextual access, persistent history, and a founder-centered legacy without universal levels or required succession.
+
+The next unresolved system is setting and narrative specifics: the fictional valley's political geography, exact contemporary period, player history, language scope, cultural consultation, and balance between authored arcs and open-ended simulation.

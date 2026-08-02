@@ -66,14 +66,24 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 - [x] Establish the game-first compression and vertical-slice boundaries
 - [x] Publish a canonical facilities-and-progression document
 
-## Active - design gate 5: knowledge and long-term progression
+## Completed - design gate 5: knowledge and long-term progression
 
-- [ ] Separate player knowledge, character skill, house capability, access, and reputation
-- [ ] Define how capabilities are learned, taught, discovered, purchased, or relationship-gated
-- [ ] Define progression without a linear tree of strictly superior upgrades
-- [ ] Define how crops, aging stock, recipes, artisans, and records accumulate into legacy
-- [ ] Decide the scope of succession and play beyond the founder's career
-- [ ] Publish a canonical knowledge-and-progression document
+- [x] Separate player knowledge, character skill, house capability, access, and reputation
+- [x] Define how capabilities are learned, taught, discovered, purchased, or relationship-gated
+- [x] Define progression without a linear tree of strictly superior upgrades
+- [x] Define how crops, aging stock, recipes, artisans, and records accumulate into legacy
+- [x] Keep the base game founder-centered without required succession or a lifespan timer
+- [x] Publish a canonical knowledge-and-progression document
+
+## Active - design gate 6: setting and narrative specifics
+
+- [ ] Decide whether the valley is in real-world Nicaragua or a fictional country grounded primarily in northern Nicaragua
+- [ ] Define the contemporary period and its technology, communication, and market consequences
+- [ ] Define the player's optional history and exact acquisition circumstances
+- [ ] Define authored story structure within open-ended simulation
+- [ ] Define Spanish-language and localization scope
+- [ ] Define cultural research and consultation requirements
+- [ ] Publish a canonical setting-and-narrative document
 
 ## Milestone 1 - embodied finca foundation
 

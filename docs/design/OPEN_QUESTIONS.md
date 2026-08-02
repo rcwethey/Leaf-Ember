@@ -5,15 +5,7 @@
 
 This file distinguishes unresolved work from canonical direction. An open question must not be silently converted into an implementation assumption.
 
-## Next focus: knowledge and long-term progression
-
-- How player knowledge, character skill, house capability, access, and reputation progress separately
-- Which capabilities are learned, purchased, taught, discovered, or relationship-gated
-- How to avoid a linear technology tree of strictly superior upgrades
-- How years of crops, aging stock, recipes, and artisans form a legacy
-- Whether succession or play beyond the founder's career belongs in scope
-
-## Setting and narrative specifics
+## Next focus: setting and narrative specifics
 
 - Whether the fictional valley is located within real-world Nicaragua or a fictional country grounded primarily in northern Nicaragua
 - The contemporary year or range and its technology, communications, and market consequences
@@ -70,4 +62,5 @@ Calibration may change values and presentation. It must not collapse the approve
 - Market and economy: [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md)
 - Characters and relationships: [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md)
 - Facilities and estate progression: [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md)
+- Knowledge and long-term progression: [`KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md)
 - High-level reputation: [`REPUTATION.md`](REPUTATION.md)

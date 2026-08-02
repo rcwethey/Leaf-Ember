@@ -50,6 +50,8 @@ The interaction is calm and analytical. It must not require repeatedly pressing 
 
 Because the player cannot literally smell or taste the virtual cigar, the game supplies concise sensory impressions appropriate to the character's current knowledge. The player's agency lies in deciding which impressions are important, how they relate across the cigar, and what caused them.
 
+How observations become evidence, confidence, predictions, and durable house knowledge is defined in [`KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md).
+
 The interface should not ask the player to type arbitrary prose or guess from no evidence. A controlled vocabulary supports comparison, localization, accessibility, and simulation feedback. Optional personal notes may exist outside the mechanical model.
 
 ## Hard data and subjective reports

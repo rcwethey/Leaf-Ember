@@ -91,6 +91,8 @@ Mastery should be visible in work and behavior. A trained artisan carrying a hou
 
 Recruitment, employment, learning, ambition, conflict, and departure are governed by [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md).
 
+Specific capability, teaching, institutional standards, and legacy are governed by [`KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md).
+
 ## Expansion
 
 Meaningful expansion emphasizes capability:

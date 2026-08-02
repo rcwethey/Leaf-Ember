@@ -51,7 +51,7 @@ The player and the cigar house have related but distinct reputations.
 - A famous founder with an unreliable operation is different from a trusted house whose artisans are respected in their own right.
 - Credit for an exceptional cigar may belong to the player, a named artisan, the growing team, or a collaboration.
 
-This distinction makes succession, mentorship, and delegation emotionally meaningful.
+This distinction makes continuity, mentorship, and delegation emotionally meaningful.
 
 ## How reputation develops
 
@@ -94,4 +94,4 @@ Feedback can be incomplete, subjective, biased, or contradictory. The player lea
 - Make mistakes recoverable through honest action and sustained improvement.
 - Let named characters remember consequential choices.
 
-The flavor system establishes how cigars are experienced and discussed, while [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) defines releases, accounts, and sell-through. [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md) defines the named people, memories, commitments, and role-specific confidence through which reputation becomes personal. Exact reputation values and progression remain prototype work.
+The flavor system establishes how cigars are experienced and discussed, while [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) defines releases, accounts, and sell-through. [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md) defines the named people, memories, commitments, and role-specific confidence through which reputation becomes personal. [`KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md) separates reputation from skill and defines how it contributes to opportunity and legacy. Exact reputation values remain prototype work.

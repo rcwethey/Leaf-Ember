@@ -77,6 +77,10 @@ The player discovers excellence; the house learns to reproduce it. See [`docs/de
 
 [`docs/design/FACILITIES_AND_ESTATE_PROGRESSION.md`](docs/design/FACILITIES_AND_ESTATE_PROGRESSION.md) defines the finca's restoration, facility abstraction, layout, environment, capacity, construction, upkeep, staffing, specialization, and vertical-slice scope.
 
+## Progression authority
+
+[`docs/design/KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](docs/design/KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md) defines evidence-based knowledge, specific technique, institutional house standards, contextual opportunities, persistent history, and founder-centered legacy.
+
 ## Daily rhythm
 
 The preferred day is deliberate rather than frantic:
