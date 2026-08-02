@@ -13,15 +13,16 @@ This directory turns the creative direction into implementation constraints. Des
 4. [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md) - memory, commitments, artisans, friendship, conflict, and character agency
 5. [`CRAFT_AND_GROWTH.md`](CRAFT_AND_GROWTH.md) - personal work, delegation, artisans, and expansion
 6. [`TIME_AND_PIPELINE.md`](TIME_AND_PIPELINE.md) - calendar philosophy and overlapping production
-7. [`LEAF_ECONOMY.md`](LEAF_ECONOMY.md) - terroir, crop allocation, sourcing, and trade
-8. [`PROCESS_TRANSFORMATION.md`](PROCESS_TRANSFORMATION.md) - curing, fermentation, resting, and aging
-9. [`FLAVOR_AND_SENSORY.md`](FLAVOR_AND_SENSORY.md) - expression, perception, vocabulary, and evaluation
-10. [`BLENDING_AND_RECIPES.md`](BLENDING_AND_RECIPES.md) - blend interactions, prototypes, specifications, and scaling
-11. [`CONSTRUCTION.md`](CONSTRUCTION.md) - personal rolling, physical results, artisan skill, and quality control
-12. [`TASTING_AND_DIAGNOSIS.md`](TASTING_AND_DIAGNOSIS.md) - tasting sessions, feedback, hypotheses, and revision
-13. [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) - buyers, releases, contracts, pricing, cash flow, and recovery
-14. [`REPUTATION.md`](REPUTATION.md) - audiences, relationships, and house identity
-15. [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) - unresolved systems and the next design work
+7. [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md) - restoration, facility abstraction, construction, capacity, and visible growth
+8. [`LEAF_ECONOMY.md`](LEAF_ECONOMY.md) - terroir, crop allocation, sourcing, and trade
+9. [`PROCESS_TRANSFORMATION.md`](PROCESS_TRANSFORMATION.md) - curing, fermentation, resting, and aging
+10. [`FLAVOR_AND_SENSORY.md`](FLAVOR_AND_SENSORY.md) - expression, perception, vocabulary, and evaluation
+11. [`BLENDING_AND_RECIPES.md`](BLENDING_AND_RECIPES.md) - blend interactions, prototypes, specifications, and scaling
+12. [`CONSTRUCTION.md`](CONSTRUCTION.md) - personal rolling, physical results, artisan skill, and quality control
+13. [`TASTING_AND_DIAGNOSIS.md`](TASTING_AND_DIAGNOSIS.md) - tasting sessions, feedback, hypotheses, and revision
+14. [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) - buyers, releases, contracts, pricing, cash flow, and recovery
+15. [`REPUTATION.md`](REPUTATION.md) - audiences, relationships, and house identity
+16. [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) - unresolved systems and the next design work
 
 System implementation notes under `docs/` must conform to this design layer. `ROADMAP.md` determines sequence; it does not overrule the vision.
 
@@ -35,6 +36,6 @@ When a canonical decision changes, update every affected document in the same ch
 
 ## Current design boundary
 
-The setting, estate structure, growth philosophy, time philosophy, production paths, leaf economy, process transformation, flavor and perception, blending, personal construction, tasting, market economy, character system, and high-level reputation direction are canonical.
+The setting, estate structure, growth philosophy, time philosophy, production paths, facilities, leaf economy, process transformation, flavor and perception, blending, personal construction, tasting, market economy, character system, and high-level reputation direction are canonical.
 
-Numerical formulas, exact thresholds, gesture details, and interface layouts require prototypes, but those prototypes must honor the canonical model. Facilities and estate progression are the next design focus.
+Numerical formulas, exact thresholds, gesture details, and interface layouts require prototypes, but those prototypes must honor the canonical model. Knowledge and long-term progression are the next design focus.

@@ -5,16 +5,7 @@
 
 This file distinguishes unresolved work from canonical direction. An open question must not be silently converted into an implementation assumption.
 
-## Next focus: facilities and estate progression
-
-- Which buildings exist at acquisition and which are restored, expanded, or newly built
-- How layout affects material travel, labor, contamination risk, and player convenience
-- How facilities improve control, information, capacity, specialization, and resilience
-- Upkeep, utilities, repair, staffing, and environmental-control costs
-- How expansion remains meaningful without making the finca enormous
-- Which visual changes make the estate feel increasingly alive
-
-## Knowledge and long-term progression
+## Next focus: knowledge and long-term progression
 
 - How player knowledge, character skill, house capability, access, and reputation progress separately
 - Which capabilities are learned, purchased, taught, discovered, or relationship-gated
@@ -78,4 +69,5 @@ Calibration may change values and presentation. It must not collapse the approve
 - Tasting and diagnosis: [`TASTING_AND_DIAGNOSIS.md`](TASTING_AND_DIAGNOSIS.md)
 - Market and economy: [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md)
 - Characters and relationships: [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md)
+- Facilities and estate progression: [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md)
 - High-level reputation: [`REPUTATION.md`](REPUTATION.md)

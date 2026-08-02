@@ -73,6 +73,10 @@ The player discovers excellence; the house learns to reproduce it. See [`docs/de
 
 [`docs/design/CHARACTERS_AND_RELATIONSHIPS.md`](docs/design/CHARACTERS_AND_RELATIONSHIPS.md) defines multidimensional relationships, memory, commitments, artisan development, employment, conflict, close bonds, dialogue, and character access.
 
+## Estate authority
+
+[`docs/design/FACILITIES_AND_ESTATE_PROGRESSION.md`](docs/design/FACILITIES_AND_ESTATE_PROGRESSION.md) defines the finca's restoration, facility abstraction, layout, environment, capacity, construction, upkeep, staffing, specialization, and vertical-slice scope.
+
 ## Daily rhythm
 
 The preferred day is deliberate rather than frantic:

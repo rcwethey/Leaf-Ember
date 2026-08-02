@@ -42,6 +42,8 @@ The long-term estate may include:
 
 Facilities should be physically legible. A leaf lot moves through the estate, changes at each stage, and retains the history of where it has been and who handled it.
 
+The finca's initial condition, compressed facility zones, restoration, construction, environmental control, and visible growth are defined in [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md).
+
 ### The nearby city
 
 The city is the commercial and institutional center rather than a second farm. It can provide:

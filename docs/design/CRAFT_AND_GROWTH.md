@@ -105,6 +105,8 @@ Meaningful expansion emphasizes capability:
 
 Land expansion may occur, but the game must not imply that owning every source is the ideal endpoint. A compact estate with exceptional facilities, people, and relationships is a complete and prestigious playstyle.
 
+Facility specialization, soft capacity, project tradeoffs, and the physical limits of the finca are governed by [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md).
+
 ## Supported identities
 
 The progression system must allow the player to remain a tiny atelier, develop a balanced boutique house, establish a larger premium operation, specialize in experimental releases, become known for estate tobacco, or focus on mentorship.

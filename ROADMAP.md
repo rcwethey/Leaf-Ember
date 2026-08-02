@@ -56,14 +56,24 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 - [x] Support close friendship and family-like bonds while excluding romance mechanics
 - [x] Publish a canonical character-and-relationship document
 
-## Active - design gate 4: facilities and estate progression
+## Completed - design gate 4: facilities and estate progression
 
-- [ ] Define the finca's initial condition and restoration sequence
-- [ ] Define facility roles, layout effects, environmental control, and capacity
-- [ ] Define construction, repair, upkeep, utilities, and staffing requirements
-- [ ] Define expansion paths that do not require an enormous estate
-- [ ] Define how estate changes become physically and socially visible
-- [ ] Publish a canonical facilities-and-progression document
+- [x] Define the finca's initial condition and restoration sequence
+- [x] Define facility roles, layout effects, environmental control, and capacity
+- [x] Define construction, repair, upkeep, utilities, and staffing requirements
+- [x] Define expansion paths that do not require an enormous estate
+- [x] Define how estate changes become physically and socially visible
+- [x] Establish the game-first compression and vertical-slice boundaries
+- [x] Publish a canonical facilities-and-progression document
+
+## Active - design gate 5: knowledge and long-term progression
+
+- [ ] Separate player knowledge, character skill, house capability, access, and reputation
+- [ ] Define how capabilities are learned, taught, discovered, purchased, or relationship-gated
+- [ ] Define progression without a linear tree of strictly superior upgrades
+- [ ] Define how crops, aging stock, recipes, artisans, and records accumulate into legacy
+- [ ] Decide the scope of succession and play beyond the founder's career
+- [ ] Publish a canonical knowledge-and-progression document
 
 ## Milestone 1 - embodied finca foundation
 

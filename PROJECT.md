@@ -35,4 +35,6 @@ The market and economy now have canonical direction from crop and inventory allo
 
 Characters and relationships now have canonical direction: multidimensional bonds, consequential memory, explicit commitments, artisan agency, hybrid authored and systemic content, and close friendship without romance mechanics.
 
-The next unresolved system is facilities and estate progression: the finca's initial condition, restoration sequence, building roles, layout effects, environmental control, capacity, upkeep, staffing, and visible growth.
+Facilities and estate progression now have canonical direction: a neglected but viable opening, a semi-authored compact finca, capability-focused improvements, soft capacity, readable environmental risk, game-first abstraction, and visible growth without factory sprawl.
+
+The next unresolved system is knowledge and long-term progression: how player understanding, artisan skill, house capability, access, reputation, and years of accumulated work develop separately and form a legacy.
