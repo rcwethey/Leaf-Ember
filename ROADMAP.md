@@ -75,15 +75,25 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 - [x] Keep the base game founder-centered without required succession or a lifespan timer
 - [x] Publish a canonical knowledge-and-progression document
 
-## Active - design gate 6: setting and narrative specifics
+## Completed - design gate 6: setting and narrative specifics
 
-- [ ] Decide whether the valley is in real-world Nicaragua or a fictional country grounded primarily in northern Nicaragua
-- [ ] Define the contemporary period and its technology, communication, and market consequences
-- [ ] Define the player's optional history and exact acquisition circumstances
-- [ ] Define authored story structure within open-ended simulation
-- [ ] Define Spanish-language and localization scope
-- [ ] Define cultural research and consultation requirements
-- [ ] Publish a canonical setting-and-narrative document
+- [x] Place the fictional valley and local town within real northern Nicaragua
+- [x] Define an undated contemporary period and stable modern technology
+- [x] Define founder backgrounds and the financed acquisition circumstances
+- [x] Define a founding spine, character arcs, and emergent house history
+- [x] Establish English-first text without character voice-over
+- [x] Define cultural research and consultation requirements
+- [x] Publish a canonical setting-and-narrative document
+
+## Active - design gate 7: calendar tuning and pacing
+
+- [ ] Define workday blocks, action costs, and the role of ordinary movement
+- [ ] Define season and year length
+- [ ] Define travel time and scheduling
+- [ ] Define safe multi-day advancement, interruptions, and summaries
+- [ ] Define crop, fermentation, aging, market, and relationship time compression
+- [ ] Define long-term historical presentation across many in-game years
+- [ ] Publish canonical calendar-and-pacing direction
 
 ## Milestone 1 - embodied finca foundation
 

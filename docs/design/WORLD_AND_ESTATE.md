@@ -11,11 +11,13 @@ The opening is about making the place viable and earning the first honest respon
 
 ## Setting
 
-The game takes place in a fictional highland valley and nearby city inspired primarily by the geography, tobacco economy, architecture, and culture of northern Nicaragua.
+The game takes place in a fictional highland valley and local town within real northern Nicaragua. Estelí remains the real regional anchor for larger industry, commerce, services, and events.
 
 Using one primary reference culture is important. The setting must not treat Central America as a single interchangeable aesthetic. Final names, history, language use, and character backgrounds require focused cultural research and, when production permits, review by people familiar with the region.
 
-The world is contemporary enough to support modern export markets and equipment, but the exact year remains open until its gameplay consequences are understood.
+The world uses a deliberately undated contemporary period with stable modern technology and an in-game Year 1 calendar.
+
+[`SETTING_AND_NARRATIVE.md`](SETTING_AND_NARRATIVE.md) governs geography, time period, founder background, acquisition, narrative structure, language, and cultural research.
 
 ## World structure
 
@@ -44,9 +46,11 @@ Facilities should be physically legible. A leaf lot moves through the estate, ch
 
 The finca's initial condition, compressed facility zones, restoration, construction, environmental control, and visible growth are defined in [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md).
 
-### The nearby city
+### The local town and Estelí
 
-The city is the commercial and institutional center rather than a second farm. It can provide:
+The fictional local town supports everyday community and practical needs through markets, meeting places, craftspeople, ordinary services, and recurring character locations.
+
+Real Estelí is represented selectively as the regional commercial and institutional center. It can connect the player to:
 
 - Leaf brokers, exporters, and buyers
 - Banks and business services
@@ -56,7 +60,7 @@ The city is the commercial and institutional center rather than a second farm. I
 - Agricultural and regulatory services
 - Festivals, forums, exhibitions, and major trade events
 
-The city should feel connected to the surrounding growing valleys. It is where agricultural work becomes industry, reputation, and access to the wider world.
+These places connect surrounding agricultural work to industry, reputation, and the wider world without requiring a second open-world map.
 
 ### Other farms
 

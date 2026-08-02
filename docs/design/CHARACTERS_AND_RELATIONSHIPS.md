@@ -221,6 +221,8 @@ Systemic interactions acknowledge work in progress, schedules, recent memories, 
 
 Major scenes can be triggered by combinations of calendar state, memories, relationship qualities, goals, employment state, and house events. The system should select an appropriate authored response or event; it does not need to simulate every thought or generate unlimited dialogue.
 
+The founding spine, character-arc structure, founder backgrounds, English text-only scope, and cultural writing standard are governed by [`SETTING_AND_NARRATIVE.md`](SETTING_AND_NARRATIVE.md).
+
 ## Dialogue and player expression
 
 Choices express priorities and conduct rather than a simple kind-versus-cruel morality scale. The player may have to decide whether to:
@@ -271,7 +273,7 @@ The first substantial playable should build a small, interconnected ensemble aro
 - A box maker, printer, or packaging craftsperson who connects presentation to local work
 - A competing proprietor or blender whose methods create pressure without requiring villainy
 
-Each is a named, authored person rather than a generic vendor. Some should already know one another so choices travel through a credible community. Final names, biographies, language, and cultural detail require the focused setting research defined in [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md).
+Each is a named, authored person rather than a generic vendor. Some should already know one another so choices travel through a credible community. Final names, biographies, language, and cultural detail follow the research and review standard in [`SETTING_AND_NARRATIVE.md`](SETTING_AND_NARRATIVE.md).
 
 Close friendship, mentorship, and family-like bonds can emerge from this ensemble over years of play. No character is designed as a romance route.
 

@@ -5,16 +5,7 @@
 
 This file distinguishes unresolved work from canonical direction. An open question must not be silently converted into an implementation assumption.
 
-## Next focus: setting and narrative specifics
-
-- Whether the fictional valley is located within real-world Nicaragua or a fictional country grounded primarily in northern Nicaragua
-- The contemporary year or range and its technology, communications, and market consequences
-- Spanish-language presentation and localization scope
-- The player's optional personal history and the exact acquisition circumstances
-- The balance between authored story arcs and open-ended simulation
-- Cultural consultation and research requirements for characters, architecture, labor, and institutions
-
-## Calendar tuning
+## Next focus: calendar tuning
 
 - Exact action costs and workday structure
 - Season and year length
@@ -63,4 +54,5 @@ Calibration may change values and presentation. It must not collapse the approve
 - Characters and relationships: [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md)
 - Facilities and estate progression: [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md)
 - Knowledge and long-term progression: [`KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md)
+- Setting and narrative: [`SETTING_AND_NARRATIVE.md`](SETTING_AND_NARRATIVE.md)
 - High-level reputation: [`REPUTATION.md`](REPUTATION.md)

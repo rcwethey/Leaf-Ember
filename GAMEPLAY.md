@@ -81,6 +81,10 @@ The player discovers excellence; the house learns to reproduce it. See [`docs/de
 
 [`docs/design/KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](docs/design/KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md) defines evidence-based knowledge, specific technique, institutional house standards, contextual opportunities, persistent history, and founder-centered legacy.
 
+## Setting and narrative authority
+
+[`docs/design/SETTING_AND_NARRATIVE.md`](docs/design/SETTING_AND_NARRATIVE.md) defines the real-Nicaragua frame, fictional primary locations, founder backgrounds, acquisition, authored and emergent story structure, English text-only scope, and cultural research standard.
+
 ## Daily rhythm
 
 The preferred day is deliberate rather than frantic:

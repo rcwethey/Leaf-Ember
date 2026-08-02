@@ -40,4 +40,4 @@ Read these files in order before changing gameplay systems:
 6. [`ROADMAP.md`](ROADMAP.md)
 7. [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
 
-System-specific notes live in `docs/`. The cigar-craft loop, market economy, character system, estate progression, and long-term progression now have canonical direction. The next design focus is setting and narrative specifics: the precise fictional geography, contemporary period, player history, cultural grounding, and relationship between authored story and open-ended play.
+System-specific notes live in `docs/`. The core systems, setting, and narrative structure now have canonical direction. The next design focus is calendar tuning and pacing: the workday, seasons, travel, multi-day advancement, aging compression, and long-term summaries.

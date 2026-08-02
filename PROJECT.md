@@ -39,4 +39,6 @@ Facilities and estate progression now have canonical direction: a neglected but 
 
 Knowledge and long-term progression now have canonical direction: evidence-based understanding, specific technique, institutional house standards, contextual access, persistent history, and a founder-centered legacy without universal levels or required succession.
 
-The next unresolved system is setting and narrative specifics: the fictional valley's political geography, exact contemporary period, player history, language scope, cultural consultation, and balance between authored arcs and open-ended simulation.
+Setting and narrative now have canonical direction: a fictional valley and town in real northern Nicaragua, an undated contemporary period, credible founder backgrounds, a financed acquisition, English text without voice-over, a three-layer narrative, and required cultural research and review.
+
+The next unresolved system is calendar tuning and pacing: exact action costs, workday structure, seasons, travel, multi-day advancement, aging compression, and readable long-term summaries.
