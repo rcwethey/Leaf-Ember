@@ -40,4 +40,4 @@ Read these files in order before changing gameplay systems:
 6. [`ROADMAP.md`](ROADMAP.md)
 7. [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
 
-System-specific notes live in `docs/`. Flavor, tasting, processing, blending, recipes, and personal construction now have canonical direction. The next design focus is the market and economy required to carry a release from the finca to distinct buyers and audiences.
+System-specific notes live in `docs/`. The cigar-craft loop and market economy now have canonical direction. The next design focus is characters and relationships: the named people through whom teaching, employment, trade, feedback, and reputation operate.

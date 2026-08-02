@@ -128,3 +128,5 @@ Producing entirely estate-grown or single-origin cigars is a meaningful creative
 ## Sensory boundary
 
 This document establishes where leaf character comes from and how lots move through the economy. [`FLAVOR_AND_SENSORY.md`](FLAVOR_AND_SENSORY.md) defines the sensory vocabulary and perception model; [`PROCESS_TRANSFORMATION.md`](PROCESS_TRANSFORMATION.md) defines how processing changes expression; and [`BLENDING_AND_RECIPES.md`](BLENDING_AND_RECIPES.md) defines component interaction.
+
+[`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) governs offers, contracts, payment, and the commercial consequences of selling or retaining leaf.

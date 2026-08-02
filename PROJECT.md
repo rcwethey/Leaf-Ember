@@ -31,4 +31,6 @@ Build a deeply embodied craftsmanship and management RPG centered on premium cig
 
 The cigar-craft loop now has canonical direction from leaf processing through tasting and revision. Numerical tuning must preserve those documents and must not introduce a universal cigar-quality score.
 
-The next unresolved system is the market and economy: sales channels, buyers, pricing, contracts, cash flow, release allocation, and the consequences of commercial demand. The character and relationship model follows closely because trade, teaching, and reputation all operate through named people.
+The market and economy now have canonical direction from crop and inventory allocation through release, payment, sell-through, and recovery from financial distress.
+
+The next unresolved system is characters and relationships: memory, trust, teaching, employment, ambition, conflict, and the differences among growers, artisans, buyers, critics, competitors, and community figures. Facilities and estate progression follow after the human systems they must support.

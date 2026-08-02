@@ -18,8 +18,9 @@ This directory turns the creative direction into implementation constraints. Des
 9. [`BLENDING_AND_RECIPES.md`](BLENDING_AND_RECIPES.md) - blend interactions, prototypes, specifications, and scaling
 10. [`CONSTRUCTION.md`](CONSTRUCTION.md) - personal rolling, physical results, artisan skill, and quality control
 11. [`TASTING_AND_DIAGNOSIS.md`](TASTING_AND_DIAGNOSIS.md) - tasting sessions, feedback, hypotheses, and revision
-12. [`REPUTATION.md`](REPUTATION.md) - audiences, relationships, and house identity
-13. [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) - unresolved systems and the next design work
+12. [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) - buyers, releases, contracts, pricing, cash flow, and recovery
+13. [`REPUTATION.md`](REPUTATION.md) - audiences, relationships, and house identity
+14. [`OPEN_QUESTIONS.md`](OPEN_QUESTIONS.md) - unresolved systems and the next design work
 
 System implementation notes under `docs/` must conform to this design layer. `ROADMAP.md` determines sequence; it does not overrule the vision.
 
@@ -33,6 +34,6 @@ When a canonical decision changes, update every affected document in the same ch
 
 ## Current design boundary
 
-The setting, estate structure, growth philosophy, time philosophy, production paths, leaf economy, process transformation, flavor and perception, blending, personal construction, tasting, and high-level reputation direction are canonical.
+The setting, estate structure, growth philosophy, time philosophy, production paths, leaf economy, process transformation, flavor and perception, blending, personal construction, tasting, market economy, and high-level reputation direction are canonical.
 
-Numerical formulas, exact thresholds, gesture details, and interface layouts require prototypes, but those prototypes must honor the canonical model. The market and economy is the next design focus.
+Numerical formulas, exact thresholds, gesture details, and interface layouts require prototypes, but those prototypes must honor the canonical model. Characters and relationships are the next design focus.

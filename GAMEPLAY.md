@@ -65,6 +65,10 @@ The player discovers excellence; the house learns to reproduce it. See [`docs/de
 - [`docs/design/CONSTRUCTION.md`](docs/design/CONSTRUCTION.md) defines personal rolling, physical results, and artisan execution.
 - [`docs/design/TASTING_AND_DIAGNOSIS.md`](docs/design/TASTING_AND_DIAGNOSIS.md) defines the observation, feedback, diagnosis, and revision loop.
 
+## Market authority
+
+[`docs/design/MARKET_AND_ECONOMY.md`](docs/design/MARKET_AND_ECONOMY.md) defines named accounts, release allocation, offers, orders, contracts, pricing, payment, sell-through, financial pressure, and recovery.
+
 ## Daily rhythm
 
 The preferred day is deliberate rather than frantic:

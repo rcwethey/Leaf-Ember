@@ -5,23 +5,6 @@
 
 This file distinguishes unresolved work from canonical direction. An open question must not be silently converted into an implementation assumption.
 
-## Next focus: market and economy
-
-The next canonical design phase must establish:
-
-- Which local, regional, export, private, and event-based sales channels are playable
-- How the player selects quantities, allocations, presentation, prices, and promises for a release
-- How wholesale, direct sales, commissions, contracts, and payment timing differ
-- How production costs, tied-up aging inventory, cash flow, credit, and facility expenses create pressure
-- How demand forms from audience preferences, availability, price, reputation, reviews, and prior releases
-- How buyers communicate orders, sell-through, complaints, returns, and repeat demand
-- How scarcity, waiting lists, unsold stock, and overproduction affect the house
-- How selling tobacco lots interacts with retaining material for the player's own portfolio
-- How export, taxes, regulation, and logistics are represented without displacing the craft
-- How commercial success remains distinct from critical, cultural, personal, and community reputation
-
-The vertical slice needs only one named buyer and a compact release transaction, but that interaction must be compatible with the eventual market model.
-
 ## Next focus: characters and relationships
 
 The character system must establish:
@@ -35,7 +18,7 @@ The character system must establish:
 - Whether friendship, family, and romance belong in the intended scope
 - How workers retain dignity, agency, credit, and working conditions as the house grows
 
-The economy and character systems should be designed together where trade depends on named people.
+The character system must conform to [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) wherever trade, contracts, feedback, or account trust depends on named people.
 
 ## Facilities and estate progression
 
@@ -108,4 +91,5 @@ Calibration may change values and presentation. It must not collapse the approve
 - Blending and recipes: [`BLENDING_AND_RECIPES.md`](BLENDING_AND_RECIPES.md)
 - Personal and artisan construction: [`CONSTRUCTION.md`](CONSTRUCTION.md)
 - Tasting and diagnosis: [`TASTING_AND_DIAGNOSIS.md`](TASTING_AND_DIAGNOSIS.md)
+- Market and economy: [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md)
 - High-level reputation: [`REPUTATION.md`](REPUTATION.md)

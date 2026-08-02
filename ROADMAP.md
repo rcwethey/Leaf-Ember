@@ -37,17 +37,17 @@ The roadmap serves the canonical vision. It should validate the cigar-craft loop
 
 Numerical calibration remains prototype work and must preserve the canonical separation of technical quality, intent, perception, consistency, and preference.
 
-## Active - design gate 2: market and economy
+## Completed - design gate 2: market and economy
 
-- [ ] Define sales channels and named buyer roles
-- [ ] Define the release, allocation, pricing, order, and payment lifecycle
-- [ ] Define operating costs, cash flow, credit, aging inventory, and financial pressure
-- [ ] Define demand, scarcity, unsold stock, repeat orders, and market feedback
-- [ ] Connect crop sales and sourced-leaf purchasing to house production
-- [ ] Decide the abstraction level for export, logistics, taxation, and regulation
-- [ ] Publish a canonical market-and-economy document
+- [x] Define sales channels and named buyer roles
+- [x] Define the release, allocation, pricing, order, and payment lifecycle
+- [x] Define operating costs, cash flow, credit, aging inventory, and financial pressure
+- [x] Define demand, scarcity, unsold stock, repeat orders, and market feedback
+- [x] Connect crop sales and sourced-leaf purchasing to house production
+- [x] Decide the abstraction level for export, logistics, taxation, and regulation
+- [x] Publish a canonical market-and-economy document
 
-## Queued - design gate 3: characters and relationships
+## Active - design gate 3: characters and relationships
 
 - [ ] Define relationship dimensions and memory
 - [ ] Define artisan recruitment, training, specialties, ambitions, conflict, and departure
@@ -55,6 +55,15 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 - [ ] Define authored versus systemic character content
 - [ ] Define the intended scope of friendship, family, and romance
 - [ ] Publish a canonical character-and-relationship document
+
+## Queued - design gate 4: facilities and estate progression
+
+- [ ] Define the finca's initial condition and restoration sequence
+- [ ] Define facility roles, layout effects, environmental control, and capacity
+- [ ] Define construction, repair, upkeep, utilities, and staffing requirements
+- [ ] Define expansion paths that do not require an enormous estate
+- [ ] Define how estate changes become physically and socially visible
+- [ ] Publish a canonical facilities-and-progression document
 
 ## Milestone 1 - embodied finca foundation
 
