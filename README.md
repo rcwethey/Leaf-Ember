@@ -1,6 +1,8 @@
 # Leaf & Ember
 
-Leaf & Ember is a craftsmanship simulation about growing tobacco and producing premium cigars. Players manage the full journey from seed and soil through curing, fermentation, aging, blending, rolling, packaging, and sale.
+Leaf & Ember is an intimate craftsmanship and management RPG about building a respected cigar house. Players grow and source tobacco, guide it through curing, fermentation, and aging, design and construct cigars, train named artisans, and earn a reputation through the work they release.
+
+The game values mastery, provenance, relationships, and a recognizable house identity over enormous farms or automated production. Read [`VISION.md`](VISION.md) before proposing gameplay features.
 
 ## Project status
 
@@ -28,12 +30,14 @@ Clone with LFS enabled, then open the repository root through Unity Hub. The sta
 
 ## Documentation
 
-Read these files before changing gameplay systems:
+Read these files in order before changing gameplay systems:
 
-1. PROJECT.md
-2. ARCHITECTURE.md
-3. GAMEPLAY.md
-4. ROADMAP.md
-5. CODING_STANDARDS.md
+1. [`VISION.md`](VISION.md)
+2. [`GAMEPLAY.md`](GAMEPLAY.md)
+3. [`docs/design/README.md`](docs/design/README.md)
+4. [`PROJECT.md`](PROJECT.md)
+5. [`ARCHITECTURE.md`](ARCHITECTURE.md)
+6. [`ROADMAP.md`](ROADMAP.md)
+7. [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
 
-System-specific notes live in docs/.
+System-specific notes live in `docs/`. The detailed flavor-profile and sensory-learning system is the next design focus and is intentionally not yet specified.
