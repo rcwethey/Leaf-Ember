@@ -85,17 +85,19 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 - [x] Define cultural research and consultation requirements
 - [x] Publish a canonical setting-and-narrative document
 
-## Active - design gate 7: calendar tuning and pacing
+## Completed - design gate 7: calendar tuning and pacing
 
-- [ ] Define workday blocks, action costs, and the role of ordinary movement
-- [ ] Define season and year length
-- [ ] Define travel time and scheduling
-- [ ] Define safe multi-day advancement, interruptions, and summaries
-- [ ] Define crop, fermentation, aging, market, and relationship time compression
-- [ ] Define long-term historical presentation across many in-game years
-- [ ] Publish canonical calendar-and-pacing direction
+- [x] Define workday blocks, action costs, and the role of ordinary movement
+- [x] Define season and year length
+- [x] Define travel time and scheduling
+- [x] Define safe multi-day advancement, interruptions, and summaries
+- [x] Define crop, fermentation, aging, market, and relationship time compression
+- [x] Define long-term historical presentation across many in-game years
+- [x] Publish canonical calendar-and-pacing direction
 
-## Milestone 1 - embodied finca foundation
+All required pre-implementation design gates are complete. Interface, accessibility, and numerical calibration continue through prototype work rather than additional blocking gates.
+
+## Active - Milestone 1: embodied finca foundation
 
 - [ ] Player controller and camera
 - [ ] Graybox the finca's core production route
@@ -104,7 +106,7 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 - [ ] Provenance-aware inventory and lot inspection
 - [ ] Save and reload the player, calendar, estate, and lot state
 
-This milestone can proceed while later design gates are being completed, provided it does not silently resolve their open questions.
+This milestone should expose interface and pacing assumptions through play. Prototype decisions must preserve the canonical design layer and record any deliberate change to it.
 
 ## Milestone 2 - cigar-development prototype
 

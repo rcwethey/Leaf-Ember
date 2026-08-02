@@ -85,6 +85,10 @@ The player discovers excellence; the house learns to reproduce it. See [`docs/de
 
 [`docs/design/SETTING_AND_NARRATIVE.md`](docs/design/SETTING_AND_NARRATIVE.md) defines the real-Nicaragua frame, fictional primary locations, founder backgrounds, acquisition, authored and emergent story structure, English text-only scope, and cultural research standard.
 
+## Calendar authority
+
+[`docs/design/TIME_AND_PIPELINE.md`](docs/design/TIME_AND_PIPELINE.md) defines the three-block day, 96-day prototype year, climate periods, travel, safe advancement, process compression, and historical summaries.
+
 ## Daily rhythm
 
 The preferred day is deliberate rather than frantic:

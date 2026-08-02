@@ -27,7 +27,7 @@ Build a deeply embodied craftsmanship and management RPG centered on premium cig
 - Reputation is audience-specific and emerges from products, promises, relationships, and conduct.
 - Tobacco is an agricultural and artisanal material rather than a generic crafting ingredient.
 
-## Current design focus
+## Current project focus
 
 The cigar-craft loop now has canonical direction from leaf processing through tasting and revision. Numerical tuning must preserve those documents and must not introduce a universal cigar-quality score.
 
@@ -41,4 +41,6 @@ Knowledge and long-term progression now have canonical direction: evidence-based
 
 Setting and narrative now have canonical direction: a fictional valley and town in real northern Nicaragua, an undated contemporary period, credible founder backgrounds, a financed acquisition, English text without voice-over, a three-layer narrative, and required cultural research and review.
 
-The next unresolved system is calendar tuning and pacing: exact action costs, workday structure, seasons, travel, multi-day advancement, aging compression, and readable long-term summaries.
+Time and pacing now have canonical direction: three daily blocks, a 96-day prototype year, climate periods rather than temperate seasons, bundled travel, safe advancement, compressed processes, and persistent monthly and annual history.
+
+The pre-implementation design foundation is complete. Active work now begins Milestone 1: player movement, a grayboxed finca route, interaction and focused-work transitions, the calendar prototype, provenance-aware inventory, and save persistence. Interface, accessibility, and numerical calibration proceed through playable prototypes.

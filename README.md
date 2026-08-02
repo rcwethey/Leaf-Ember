@@ -40,4 +40,4 @@ Read these files in order before changing gameplay systems:
 6. [`ROADMAP.md`](ROADMAP.md)
 7. [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
 
-System-specific notes live in `docs/`. The core systems, setting, and narrative structure now have canonical direction. The next design focus is calendar tuning and pacing: the workday, seasons, travel, multi-day advancement, aging compression, and long-term summaries.
+System-specific notes live in `docs/`. The pre-implementation design foundation is complete. Active work now moves to Milestone 1: an embodied finca graybox, interaction framework, calendar prototype, provenance-aware inventory, and persistent playable state.

@@ -1,20 +1,11 @@
 # Open design questions
 
-**Status:** Active design queue
+**Status:** Implementation-led calibration queue
 **Last reviewed:** 2026-08-02
 
-This file distinguishes unresolved work from canonical direction. An open question must not be silently converted into an implementation assumption.
+This file distinguishes prototype questions from canonical direction. No item below blocks the start of implementation. Prototype decisions must be tested, recorded, and kept consistent with the design authorities.
 
-## Next focus: calendar tuning
-
-- Exact action costs and workday structure
-- Season and year length
-- Travel treatment
-- Limits and interruptions during multi-day advancement
-- Aging compression across a playable career
-- The presentation of long-term summaries and historical records
-
-## Interface and accessibility
+## Implementation focus: interface and accessibility
 
 - Final third-person camera and navigation model
 - Transition between embodied finca play and close-up workbench interfaces
@@ -43,7 +34,7 @@ Calibration may change values and presentation. It must not collapse the approve
 - Core loop and vertical-slice identity: [`../../GAMEPLAY.md`](../../GAMEPLAY.md)
 - World and finca: [`WORLD_AND_ESTATE.md`](WORLD_AND_ESTATE.md)
 - Growth and delegation: [`CRAFT_AND_GROWTH.md`](CRAFT_AND_GROWTH.md)
-- Time philosophy: [`TIME_AND_PIPELINE.md`](TIME_AND_PIPELINE.md)
+- Time, calendar, and pacing: [`TIME_AND_PIPELINE.md`](TIME_AND_PIPELINE.md)
 - Terroir and leaf economy: [`LEAF_ECONOMY.md`](LEAF_ECONOMY.md)
 - Process transformation: [`PROCESS_TRANSFORMATION.md`](PROCESS_TRANSFORMATION.md)
 - Flavor and sensory perception: [`FLAVOR_AND_SENSORY.md`](FLAVOR_AND_SENSORY.md)

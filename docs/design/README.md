@@ -13,7 +13,7 @@ This directory turns the creative direction into implementation constraints. Des
 4. [`SETTING_AND_NARRATIVE.md`](SETTING_AND_NARRATIVE.md) - geography, period, founder, story structure, language, and cultural research
 5. [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md) - memory, commitments, artisans, friendship, conflict, and character agency
 6. [`CRAFT_AND_GROWTH.md`](CRAFT_AND_GROWTH.md) - personal work, delegation, artisans, and expansion
-7. [`TIME_AND_PIPELINE.md`](TIME_AND_PIPELINE.md) - calendar philosophy and overlapping production
+7. [`TIME_AND_PIPELINE.md`](TIME_AND_PIPELINE.md) - daily blocks, calendar, climate, travel, advancement, and overlapping production
 8. [`FACILITIES_AND_ESTATE_PROGRESSION.md`](FACILITIES_AND_ESTATE_PROGRESSION.md) - restoration, facility abstraction, construction, capacity, and visible growth
 9. [`KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md`](KNOWLEDGE_AND_LONG_TERM_PROGRESSION.md) - evidence, technique, standards, opportunity, archive, and legacy
 10. [`LEAF_ECONOMY.md`](LEAF_ECONOMY.md) - terroir, crop allocation, sourcing, and trade
@@ -38,6 +38,6 @@ When a canonical decision changes, update every affected document in the same ch
 
 ## Current design boundary
 
-The setting, narrative structure, estate structure, growth philosophy, time philosophy, production paths, facilities, long-term progression, leaf economy, process transformation, flavor and perception, blending, personal construction, tasting, market economy, character system, and high-level reputation direction are canonical.
+The setting, narrative structure, estate structure, growth philosophy, calendar and pacing, production paths, facilities, long-term progression, leaf economy, process transformation, flavor and perception, blending, personal construction, tasting, market economy, character system, and high-level reputation direction are canonical.
 
-Numerical formulas, exact thresholds, gesture details, and interface layouts require prototypes, but those prototypes must honor the canonical model. Calendar tuning and pacing are the next design focus.
+All required pre-implementation design gates are complete. Numerical formulas, exact thresholds, gesture details, interface layouts, and accessibility options now require playable prototypes that honor the canonical model. Active work is Milestone 1 in [`ROADMAP.md`](../../ROADMAP.md).
