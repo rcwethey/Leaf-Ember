@@ -33,4 +33,6 @@ The cigar-craft loop now has canonical direction from leaf processing through ta
 
 The market and economy now have canonical direction from crop and inventory allocation through release, payment, sell-through, and recovery from financial distress.
 
-The next unresolved system is characters and relationships: memory, trust, teaching, employment, ambition, conflict, and the differences among growers, artisans, buyers, critics, competitors, and community figures. Facilities and estate progression follow after the human systems they must support.
+Characters and relationships now have canonical direction: multidimensional bonds, consequential memory, explicit commitments, artisan agency, hybrid authored and systemic content, and close friendship without romance mechanics.
+
+The next unresolved system is facilities and estate progression: the finca's initial condition, restoration sequence, building roles, layout effects, environmental control, capacity, upkeep, staffing, and visible growth.

@@ -5,22 +5,7 @@
 
 This file distinguishes unresolved work from canonical direction. An open question must not be silently converted into an implementation assumption.
 
-## Next focus: characters and relationships
-
-The character system must establish:
-
-- Relationship dimensions beyond one friendship meter
-- Memory of agreements, teaching, credit, mistakes, and treatment
-- Artisan recruitment, training, specialties, ambitions, conflict, and departure
-- Grower, buyer, critic, competitor, and community relationship patterns
-- Schedules and presence without creating excessive waiting
-- How authored stories interact with systemic work and reputation
-- Whether friendship, family, and romance belong in the intended scope
-- How workers retain dignity, agency, credit, and working conditions as the house grows
-
-The character system must conform to [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) wherever trade, contracts, feedback, or account trust depends on named people.
-
-## Facilities and estate progression
+## Next focus: facilities and estate progression
 
 - Which buildings exist at acquisition and which are restored, expanded, or newly built
 - How layout affects material travel, labor, contamination risk, and player convenience
@@ -92,4 +77,5 @@ Calibration may change values and presentation. It must not collapse the approve
 - Personal and artisan construction: [`CONSTRUCTION.md`](CONSTRUCTION.md)
 - Tasting and diagnosis: [`TASTING_AND_DIAGNOSIS.md`](TASTING_AND_DIAGNOSIS.md)
 - Market and economy: [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md)
+- Characters and relationships: [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md)
 - High-level reputation: [`REPUTATION.md`](REPUTATION.md)

@@ -94,4 +94,4 @@ Feedback can be incomplete, subjective, biased, or contradictory. The player lea
 - Make mistakes recoverable through honest action and sustained improvement.
 - Let named characters remember consequential choices.
 
-The flavor system establishes how cigars are experienced and discussed, while [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) defines releases, accounts, and sell-through. Exact reputation dimensions, visibility rules, and progression must be completed with the character system so response remains grounded in named people and remembered interactions.
+The flavor system establishes how cigars are experienced and discussed, while [`MARKET_AND_ECONOMY.md`](MARKET_AND_ECONOMY.md) defines releases, accounts, and sell-through. [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md) defines the named people, memories, commitments, and role-specific confidence through which reputation becomes personal. Exact reputation values and progression remain prototype work.

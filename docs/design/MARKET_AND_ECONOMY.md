@@ -38,6 +38,8 @@ Every buyer or commercial partner is a named account connected to a character or
 
 A cigar can be excellent but poorly matched to an account's clientele. The player learns where each expression belongs.
 
+The commercial account and its transactions are defined here; the named person's trust, memory, commitments, and broader relationship are governed by [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md).
+
 ## Sales channels
 
 | Channel | Advantage | Cost or limitation |

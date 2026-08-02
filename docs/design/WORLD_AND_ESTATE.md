@@ -80,6 +80,8 @@ Characters are named people whose work places them naturally inside the cigar ec
 
 Employees must not be presented as a count of generic labor. Their experience, specialties, relationships, working conditions, and aspirations are part of the house the player is building.
 
+Their agency, memory, employment, development, and close bonds are defined in [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md).
+
 ## Social and commercial spaces
 
 A conventional consumer cigar lounge is not the default center of local life. Feedback and relationships can emerge through:

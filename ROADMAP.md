@@ -47,16 +47,16 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 - [x] Decide the abstraction level for export, logistics, taxation, and regulation
 - [x] Publish a canonical market-and-economy document
 
-## Active - design gate 3: characters and relationships
+## Completed - design gate 3: characters and relationships
 
-- [ ] Define relationship dimensions and memory
-- [ ] Define artisan recruitment, training, specialties, ambitions, conflict, and departure
-- [ ] Define grower, buyer, critic, competitor, and community relationship patterns
-- [ ] Define authored versus systemic character content
-- [ ] Define the intended scope of friendship, family, and romance
-- [ ] Publish a canonical character-and-relationship document
+- [x] Define relationship dimensions and memory
+- [x] Define artisan recruitment, training, specialties, ambitions, conflict, and departure
+- [x] Define grower, buyer, critic, competitor, and community relationship patterns
+- [x] Define authored versus systemic character content
+- [x] Support close friendship and family-like bonds while excluding romance mechanics
+- [x] Publish a canonical character-and-relationship document
 
-## Queued - design gate 4: facilities and estate progression
+## Active - design gate 4: facilities and estate progression
 
 - [ ] Define the finca's initial condition and restoration sequence
 - [ ] Define facility roles, layout effects, environmental control, and capacity

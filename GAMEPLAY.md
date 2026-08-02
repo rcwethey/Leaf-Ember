@@ -69,6 +69,10 @@ The player discovers excellence; the house learns to reproduce it. See [`docs/de
 
 [`docs/design/MARKET_AND_ECONOMY.md`](docs/design/MARKET_AND_ECONOMY.md) defines named accounts, release allocation, offers, orders, contracts, pricing, payment, sell-through, financial pressure, and recovery.
 
+## Character authority
+
+[`docs/design/CHARACTERS_AND_RELATIONSHIPS.md`](docs/design/CHARACTERS_AND_RELATIONSHIPS.md) defines multidimensional relationships, memory, commitments, artisan development, employment, conflict, close bonds, dialogue, and character access.
+
 ## Daily rhythm
 
 The preferred day is deliberate rather than frantic:

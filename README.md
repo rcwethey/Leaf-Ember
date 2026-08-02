@@ -40,4 +40,4 @@ Read these files in order before changing gameplay systems:
 6. [`ROADMAP.md`](ROADMAP.md)
 7. [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
 
-System-specific notes live in `docs/`. The cigar-craft loop and market economy now have canonical direction. The next design focus is characters and relationships: the named people through whom teaching, employment, trade, feedback, and reputation operate.
+System-specific notes live in `docs/`. The cigar-craft loop, market economy, and character system now have canonical direction. The next design focus is facilities and estate progression: how the finca is restored and expanded without turning it into an enormous factory or farm.

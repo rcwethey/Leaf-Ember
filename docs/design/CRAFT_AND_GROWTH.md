@@ -89,6 +89,8 @@ Artisans have more than a generic skill level. Over time they can develop:
 
 Mastery should be visible in work and behavior. A trained artisan carrying a house standard forward is part of the player's legacy.
 
+Recruitment, employment, learning, ambition, conflict, and departure are governed by [`CHARACTERS_AND_RELATIONSHIPS.md`](CHARACTERS_AND_RELATIONSHIPS.md).
+
 ## Expansion
 
 Meaningful expansion emphasizes capability:
