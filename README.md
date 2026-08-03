@@ -10,18 +10,20 @@ This repository is the Unity continuation of an earlier Godot prototype. The ori
 
 https://github.com/rcwethey/Leaf-Ember/tree/archive/godot-prototype
 
-The technical foundation and all pre-implementation design gates are complete. Milestone 1 now provides a playable embodied-finca prototype:
+The technical foundation and all pre-implementation design gates are complete. Milestones 1 and 2 now provide a playable embodied finca and cigar-development loop:
 
 - Unity 6 LTS with the Universal Render Pipeline
 - first-person movement and camera control
-- a six-zone graybox production route plus finca office
+- a compact production route plus finca office, rebuilt with handmade tobacco-specific props
 - free inspection and confirmed block-costing focused work
 - the three-block, 96-day calendar with scheduled checkpoints and work summaries
-- provenance-aware leaf-lot inspection
-- versioned JSON persistence for player, calendar, estate, and inventory state
-- deterministic Edit Mode coverage and a Play Mode startup smoke test
+- four provenance-aware estate and sourced leaf lots
+- blend intent, versioned recipe construction, hard quality-control evidence, and required rest
+- staged perspective tasting, intent comparison, causal diagnosis, revision, and tradeoff comparison
+- versioned JSON persistence for player, calendar, estate, inventory, and cigar-development state
+- 23 passing Edit Mode tests and a passing Play Mode startup smoke test
 
-Milestone 2, the cigar-development prototype, is now active.
+Milestone 3, the first tiny-batch release, is now active.
 
 ## Requirements
 
@@ -31,7 +33,7 @@ Milestone 2, the cigar-development prototype, is now active.
 
 Clone with LFS enabled, then open the repository root through Unity Hub. The startup scene is Assets/LeafEmber/Scenes/Bootstrap.unity.
 
-Enter Play Mode to walk the finca. Use WASD and the mouse, press E to interact, F5 to save, F9 to reload, and Escape to close focused views. See [`docs/implementation/MILESTONE_1.md`](docs/implementation/MILESTONE_1.md) for the current prototype contract and playtest notes.
+Enter Play Mode to walk the finca. Use WASD and the mouse, press E to interact, F5 to save, F9 to reload, and Escape to close focused views. The workshop starts cigar development; the courtyard tasting table continues it after the required rest. See [`docs/implementation/MILESTONE_2.md`](docs/implementation/MILESTONE_2.md) for the complete loop and focused-view controls.
 
 ## Documentation
 
@@ -45,5 +47,7 @@ Read these files in order before changing gameplay systems:
 6. [`ROADMAP.md`](ROADMAP.md)
 7. [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
 8. [`docs/implementation/MILESTONE_1.md`](docs/implementation/MILESTONE_1.md)
+9. [`docs/implementation/MILESTONE_2.md`](docs/implementation/MILESTONE_2.md)
+10. [`docs/art/ASSET_SOURCING.md`](docs/art/ASSET_SOURCING.md)
 
 System-specific notes live in `docs/`. Canonical design documents dictate intent; implementation notes record what the current prototype actually proves and where it remains deliberately temporary.

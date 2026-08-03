@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using LeafEmber.Cigar;
 using LeafEmber.Estate;
 using LeafEmber.Events;
 using LeafEmber.Inventory;
@@ -18,6 +19,7 @@ public sealed class PrototypeHud : MonoBehaviour
     private const string CalendarSection = "calendar";
     private const string InventorySection = "inventory";
     private const string EstateSection = "estate";
+    private const string CigarDevelopmentSection = "cigar-development";
     private const string PlayerSection = "player";
 
     private enum ModalKind
@@ -33,6 +35,7 @@ public sealed class PrototypeHud : MonoBehaviour
     private ICalendarService calendar;
     private IInventoryService inventory;
     private IEstateService estate;
+    private ICigarDevelopmentService cigarDevelopment;
     private ISaveService saveService;
     private Transform player;
     private PlayerInteractor interactor;
@@ -55,6 +58,7 @@ public sealed class PrototypeHud : MonoBehaviour
         ICalendarService calendarService,
         IInventoryService inventoryService,
         IEstateService estateService,
+        ICigarDevelopmentService cigarDevelopmentService,
         ISaveService gameSaveService,
         Transform playerTransform,
         PlayerInteractor playerInteractor)
@@ -63,6 +67,7 @@ public sealed class PrototypeHud : MonoBehaviour
         calendar = calendarService;
         inventory = inventoryService;
         estate = estateService;
+        cigarDevelopment = cigarDevelopmentService;
         saveService = gameSaveService;
         player = playerTransform;
         interactor = playerInteractor;
@@ -330,13 +335,17 @@ public sealed class PrototypeHud : MonoBehaviour
             SaveSectionStore.Set(saveGame, CalendarSection, calendar.Current);
             SaveSectionStore.Set(saveGame, InventorySection, inventory.Capture());
             SaveSectionStore.Set(saveGame, EstateSection, estate.Capture());
+            SaveSectionStore.Set(
+                saveGame,
+                CigarDevelopmentSection,
+                cigarDevelopment.Capture());
             SaveSectionStore.Set(saveGame, PlayerSection, new PlayerPositionSnapshot
             {
                 position = player.position,
                 eulerAngles = player.eulerAngles,
             });
             saveService.Save(saveGame);
-            ShowToast("Prototype saved: player, calendar, estate, and leaf lots.");
+            ShowToast("Prototype saved: player, calendar, estate, leaf lots, recipes, and tastings.");
         }
         catch (Exception exception)
         {
@@ -368,6 +377,14 @@ public sealed class PrototypeHud : MonoBehaviour
             if (SaveSectionStore.TryGet(saveGame, EstateSection, out EstateSnapshot estateState))
             {
                 estate.Restore(estateState);
+            }
+
+            if (SaveSectionStore.TryGet(
+                    saveGame,
+                    CigarDevelopmentSection,
+                    out CigarDevelopmentSnapshot cigarState))
+            {
+                cigarDevelopment.Restore(cigarState);
             }
 
             if (SaveSectionStore.TryGet(saveGame, PlayerSection, out PlayerPositionSnapshot playerState))

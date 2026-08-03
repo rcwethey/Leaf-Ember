@@ -1,3 +1,4 @@
+using LeafEmber.Cigar;
 using LeafEmber.Estate;
 using LeafEmber.Events;
 using LeafEmber.Inventory;
@@ -49,6 +50,7 @@ public sealed class GameBootstrap : MonoBehaviour
         ServiceRegistry registry = new();
         GameEventBus eventBus = new();
         CalendarService calendarService = new();
+        InventoryService inventoryService = new();
         calendarService.Schedule(new ScheduledCheckpoint
         {
             id = "curing-humidity-check",
@@ -66,8 +68,10 @@ public sealed class GameBootstrap : MonoBehaviour
         registry.Register<IEventBus>(eventBus);
         registry.Register<ISaveService>(new JsonSaveService());
         registry.Register<ICalendarService>(calendarService);
-        registry.Register<IInventoryService>(new InventoryService());
+        registry.Register<IInventoryService>(inventoryService);
         registry.Register<IEstateService>(new EstateService());
+        registry.Register<ICigarDevelopmentService>(
+            new CigarDevelopmentService(inventoryService));
         GameServices.Initialize(registry);
         eventBus.Publish(new GameStartedEvent(Application.version));
     }

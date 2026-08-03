@@ -108,17 +108,19 @@ All required pre-implementation design gates are complete. Interface, accessibil
 
 The runtime-generated graybox and its implementation contract are documented in [`docs/implementation/MILESTONE_1.md`](docs/implementation/MILESTONE_1.md). Hands-on evaluation may change control feel, layout, interface treatment, and tuning without reopening the approved design direction.
 
-## Active - Milestone 2: cigar-development prototype
+## Completed - Milestone 2: cigar-development prototype
 
-- [ ] Provide several authored leaf lots with distinct provenance
-- [ ] Implement the compact first flavor and process data model
-- [ ] Blend-intent and versioned recipe notebook
-- [ ] Prototype preparation and rolling interaction
-- [ ] Construction evaluation and hard quality-control evidence
-- [ ] Focused tasting, intent comparison, diagnosis, and revision
-- [ ] Compare two prototype versions without a universal quality score
+- [x] Provide several authored leaf lots with distinct provenance
+- [x] Implement the compact first flavor and process data model
+- [x] Blend-intent and versioned recipe notebook
+- [x] Prototype preparation and rolling interaction
+- [x] Construction evaluation and hard quality-control evidence
+- [x] Focused tasting, intent comparison, diagnosis, and revision
+- [x] Compare two prototype versions without a universal quality score
 
-## Milestone 3 - first release
+The playable contract, deliberate abstractions, validation evidence, and playtest questions are documented in [docs/implementation/MILESTONE_2.md](docs/implementation/MILESTONE_2.md).
+
+## Active - Milestone 3: first release
 
 - [ ] Commit a recipe and finite leaf allocation
 - [ ] Produce and age a tiny batch

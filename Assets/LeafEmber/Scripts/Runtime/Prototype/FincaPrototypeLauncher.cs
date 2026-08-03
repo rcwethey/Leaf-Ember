@@ -1,3 +1,5 @@
+using System;
+using LeafEmber.Cigar;
 using LeafEmber.Core;
 using LeafEmber.Estate;
 using LeafEmber.Events;
@@ -22,14 +24,22 @@ public sealed class FincaPrototypeLauncher : MonoBehaviour
         ICalendarService calendar = services.Resolve<ICalendarService>();
         IInventoryService inventory = services.Resolve<IInventoryService>();
         IEstateService estate = services.Resolve<IEstateService>();
+        ICigarDevelopmentService cigarDevelopment =
+            services.Resolve<ICigarDevelopmentService>();
         ISaveService saveService = services.Resolve<ISaveService>();
 
         GameObject world = new("[Leaf & Ember] Finca Prototype");
         FincaWorldBuilder.BuildEnvironment(world.transform);
 
         PrototypeHud hud = world.AddComponent<PrototypeHud>();
+        CigarDevelopmentView cigarView = world.AddComponent<CigarDevelopmentView>();
         Camera playerCamera = CreatePlayerCamera();
-        GameObject player = CreatePlayer(playerCamera, hud, eventBus, out PlayerInteractor interactor);
+        Func<bool> inputBlocked = () => hud.IsModalOpen || cigarView.IsOpen;
+        GameObject player = CreatePlayer(
+            playerCamera,
+            inputBlocked,
+            eventBus,
+            out PlayerInteractor interactor);
         player.transform.SetParent(world.transform);
 
         hud.Initialize(
@@ -37,9 +47,11 @@ public sealed class FincaPrototypeLauncher : MonoBehaviour
             calendar,
             inventory,
             estate,
+            cigarDevelopment,
             saveService,
             player.transform,
             interactor);
+        cigarView.Initialize(eventBus, calendar, cigarDevelopment);
     }
 
     private static Camera CreatePlayerCamera()
@@ -60,7 +72,7 @@ public sealed class FincaPrototypeLauncher : MonoBehaviour
 
     private static GameObject CreatePlayer(
         Camera playerCamera,
-        PrototypeHud hud,
+        Func<bool> inputBlocked,
         IEventBus eventBus,
         out PlayerInteractor interactor)
     {
@@ -79,11 +91,11 @@ public sealed class FincaPrototypeLauncher : MonoBehaviour
 
         PrototypePlayerController controller = player.AddComponent<PrototypePlayerController>();
         interactor = player.AddComponent<PlayerInteractor>();
-        controller.Initialize(playerCamera.transform, () => hud.IsModalOpen);
+        controller.Initialize(playerCamera.transform, inputBlocked);
         interactor.Initialize(
             playerCamera,
             new InteractionContext(eventBus),
-            () => hud.IsModalOpen);
+            inputBlocked);
 
         return player;
     }

@@ -12,15 +12,17 @@
 
 ## Runtime composition
 
-GameBootstrap creates the persistent composition root before the first scene loads. It registers event, save, calendar, inventory, and estate services in ServiceRegistry; consumers depend on interfaces and obtain references during initialization. GameEventBus carries cross-system notifications without coupling publishers to concrete consumers.
+GameBootstrap creates the persistent composition root before the first scene loads. It registers event, save, calendar, inventory, estate, and cigar-development services in ServiceRegistry; consumers depend on interfaces and obtain references during initialization. GameEventBus carries cross-system notifications without coupling publishers to concrete consumers.
 
 Static definitions must never contain mutable session state. Save data uses schema-versioned data-transfer objects so migrations can be introduced without coupling persistence to scene objects.
 
 ## Prototype composition
 
-FincaPrototypeLauncher is the temporary Milestone 1 composition layer. It builds the graybox at runtime, creates the founder controller and camera, and injects service references into the HUD and interaction context. This keeps graybox geometry disposable while the deterministic domain systems remain reusable.
+FincaPrototypeLauncher is the temporary Milestone 1–2 composition layer. It builds the finca prototype at runtime, creates the founder controller and camera, and injects service references into the HUD, cigar-development view, and interaction context. This keeps prototype geometry disposable while deterministic domain systems remain reusable.
 
-The calendar, inventory, and estate services are plain deterministic C# classes. MonoBehaviours translate physical interaction into typed requests; the prototype HUD confirms meaningful work before invoking calendar advancement. SaveSectionStore serializes each domain snapshot into the existing versioned save envelope.
+The calendar, inventory, estate, and cigar-development services are plain deterministic C# classes. MonoBehaviours translate physical interaction into typed requests. The prototype HUD and focused cigar view confirm meaningful work before invoking calendar advancement. SaveSectionStore serializes each domain snapshot into the existing versioned save envelope.
+
+CigarDevelopmentService preserves versioned intent, recipes, study cigars, construction evidence, hidden expression, perspective tasting records, and diagnosis history. CigarWorkbench and TastingTable only publish requests; they do not own craft state. Hidden expression supports deterministic consistency but is never presented as an objective sensory answer.
 
 The immediate-mode prototype HUD is intentionally temporary. It exists to evaluate information hierarchy, action costs, and focused transitions before committing to a production UI framework.
 
@@ -33,6 +35,7 @@ The immediate-mode prototype HUD is intentionally temporary. It exists to evalua
 - Weather
 - Farm
 - Tobacco
+- Cigar development
 - Inventory
 - Economy
 

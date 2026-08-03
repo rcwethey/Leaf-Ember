@@ -43,6 +43,8 @@ Setting and narrative now have canonical direction: a fictional valley and town 
 
 Time and pacing now have canonical direction: three daily blocks, a 96-day prototype year, climate periods rather than temperate seasons, bundled travel, safe advancement, compressed processes, and persistent monthly and annual history.
 
-The pre-implementation design foundation is complete. Milestone 1 is implemented: the player can inhabit a grayboxed finca route, distinguish free inspection from focused work, advance the approved calendar, encounter scheduled checkpoints, inspect provenance-aware lots, and save or restore player, calendar, estate, and inventory state.
+The pre-implementation design foundation is complete. Milestone 1 is implemented: the player can inhabit the finca route, distinguish free inspection from focused work, advance the approved calendar, encounter scheduled checkpoints, inspect provenance-aware lots, and save or restore player, calendar, estate, and inventory state.
 
-Active work now moves to Milestone 2: the cigar-development prototype. The next slice must add the compact flavor and process model, blend intent, versioned recipes, personal prototype construction, construction evidence, contextual tasting, diagnosis, and comparison without introducing a universal quality score. Interface, accessibility, and numerical calibration continue through playable prototypes.
+Milestone 2 is implemented and test-validated. The player can record an intent, choose an authored composition, construct a study cigar, inspect hard evidence, conduct a staged perspective tasting, diagnose a likely cause, preserve a recipe revision, and compare two versions without a universal quality score. The finca now also has a handmade tobacco-specific presentation pass.
+
+Active work moves to Milestone 3: commit a recipe and finite leaf allocation, produce and age a tiny batch, package the release, place it with an initial named buyer, and receive contextual market, relationship, knowledge, and reputation consequences. Interface, accessibility, art, and numerical calibration continue through playable prototypes.

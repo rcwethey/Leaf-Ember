@@ -1,4 +1,5 @@
 using System;
+using LeafEmber.Cigar;
 
 namespace LeafEmber.Inventory
 {
@@ -16,6 +17,8 @@ public sealed class LeafLotState
     public string intendedRole;
     public string observations;
     public float quantityKilograms;
+    public LeafPotentialState potential;
+    public LeafProcessState process;
 
     public LeafLotState Copy()
     {
@@ -31,6 +34,8 @@ public sealed class LeafLotState
             intendedRole = intendedRole,
             observations = observations,
             quantityKilograms = quantityKilograms,
+            potential = potential?.Copy(),
+            process = process?.Copy(),
         };
     }
 }
