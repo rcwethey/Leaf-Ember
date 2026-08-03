@@ -97,18 +97,18 @@ Numerical calibration remains prototype work and must preserve the canonical sep
 
 All required pre-implementation design gates are complete. Interface, accessibility, and numerical calibration continue through prototype work rather than additional blocking gates.
 
-## Active - Milestone 1: embodied finca foundation
+## Completed - Milestone 1: embodied finca foundation
 
-- [ ] Player controller and camera
-- [ ] Graybox the finca's core production route
-- [ ] Interaction framework and focused workbench transitions
-- [ ] Calendar, time advancement, scheduled checkpoints, and summaries
-- [ ] Provenance-aware inventory and lot inspection
-- [ ] Save and reload the player, calendar, estate, and lot state
+- [x] Player controller and camera
+- [x] Graybox the finca's core production route
+- [x] Interaction framework and focused workbench transitions
+- [x] Calendar, time advancement, scheduled checkpoints, and summaries
+- [x] Provenance-aware inventory and lot inspection
+- [x] Save and reload the player, calendar, estate, and lot state
 
-This milestone should expose interface and pacing assumptions through play. Prototype decisions must preserve the canonical design layer and record any deliberate change to it.
+The runtime-generated graybox and its implementation contract are documented in [`docs/implementation/MILESTONE_1.md`](docs/implementation/MILESTONE_1.md). Hands-on evaluation may change control feel, layout, interface treatment, and tuning without reopening the approved design direction.
 
-## Milestone 2 - cigar-development prototype
+## Active - Milestone 2: cigar-development prototype
 
 - [ ] Provide several authored leaf lots with distinct provenance
 - [ ] Implement the compact first flavor and process data model

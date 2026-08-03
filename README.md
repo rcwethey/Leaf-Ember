@@ -10,15 +10,18 @@ This repository is the Unity continuation of an earlier Godot prototype. The ori
 
 https://github.com/rcwethey/Leaf-Ember/tree/archive/godot-prototype
 
-Sprint 0 establishes:
+The technical foundation and all pre-implementation design gates are complete. Milestone 1 now provides a playable embodied-finca prototype:
 
 - Unity 6 LTS with the Universal Render Pipeline
-- Input System project configuration
-- Persistent application bootstrap
-- Service registry and typed event bus
-- Versioned JSON save-system skeleton
-- Edit Mode tests for the foundational services
-- Migrated character and farming-animation source assets
+- first-person movement and camera control
+- a six-zone graybox production route plus finca office
+- free inspection and confirmed block-costing focused work
+- the three-block, 96-day calendar with scheduled checkpoints and work summaries
+- provenance-aware leaf-lot inspection
+- versioned JSON persistence for player, calendar, estate, and inventory state
+- deterministic Edit Mode coverage and a Play Mode startup smoke test
+
+Milestone 2, the cigar-development prototype, is now active.
 
 ## Requirements
 
@@ -27,6 +30,8 @@ Sprint 0 establishes:
 - Windows development environment
 
 Clone with LFS enabled, then open the repository root through Unity Hub. The startup scene is Assets/LeafEmber/Scenes/Bootstrap.unity.
+
+Enter Play Mode to walk the finca. Use WASD and the mouse, press E to interact, F5 to save, F9 to reload, and Escape to close focused views. See [`docs/implementation/MILESTONE_1.md`](docs/implementation/MILESTONE_1.md) for the current prototype contract and playtest notes.
 
 ## Documentation
 
@@ -39,5 +44,6 @@ Read these files in order before changing gameplay systems:
 5. [`ARCHITECTURE.md`](ARCHITECTURE.md)
 6. [`ROADMAP.md`](ROADMAP.md)
 7. [`CODING_STANDARDS.md`](CODING_STANDARDS.md)
+8. [`docs/implementation/MILESTONE_1.md`](docs/implementation/MILESTONE_1.md)
 
-System-specific notes live in `docs/`. The pre-implementation design foundation is complete. Active work now moves to Milestone 1: an embodied finca graybox, interaction framework, calendar prototype, provenance-aware inventory, and persistent playable state.
+System-specific notes live in `docs/`. Canonical design documents dictate intent; implementation notes record what the current prototype actually proves and where it remains deliberately temporary.

@@ -1,0 +1,21 @@
+{
+  "name": "LeafEmber.Tests.PlayMode",
+  "rootNamespace": "LeafEmber.Tests",
+  "references": [
+    "LeafEmber.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "noEngineReferences": false
+}

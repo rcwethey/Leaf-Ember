@@ -43,4 +43,6 @@ Setting and narrative now have canonical direction: a fictional valley and town 
 
 Time and pacing now have canonical direction: three daily blocks, a 96-day prototype year, climate periods rather than temperate seasons, bundled travel, safe advancement, compressed processes, and persistent monthly and annual history.
 
-The pre-implementation design foundation is complete. Active work now begins Milestone 1: player movement, a grayboxed finca route, interaction and focused-work transitions, the calendar prototype, provenance-aware inventory, and save persistence. Interface, accessibility, and numerical calibration proceed through playable prototypes.
+The pre-implementation design foundation is complete. Milestone 1 is implemented: the player can inhabit a grayboxed finca route, distinguish free inspection from focused work, advance the approved calendar, encounter scheduled checkpoints, inspect provenance-aware lots, and save or restore player, calendar, estate, and inventory state.
+
+Active work now moves to Milestone 2: the cigar-development prototype. The next slice must add the compact flavor and process model, blend intent, versioned recipes, personal prototype construction, construction evidence, contextual tasting, diagnosis, and comparison without introducing a universal quality score. Interface, accessibility, and numerical calibration continue through playable prototypes.
