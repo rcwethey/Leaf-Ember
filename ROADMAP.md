@@ -1,7 +1,7 @@
 # Roadmap
 
 **Status:** Directional; revisit after each design gate
-**Last reviewed:** 2026-08-02
+**Last reviewed:** 2026-08-03
 
 The roadmap serves the canonical vision. It should validate the cigar-craft loop before expanding agricultural scale or production volume.
 
@@ -120,7 +120,20 @@ The runtime-generated graybox and its implementation contract are documented in 
 
 The playable contract, deliberate abstractions, validation evidence, and playtest questions are documented in [docs/implementation/MILESTONE_2.md](docs/implementation/MILESTONE_2.md).
 
-## Active - Milestone 3: first release
+## Active - Milestone 3A: finca and player-experience overhaul
+
+- [x] Expand the finca into distinct landmark-driven production, residential, and arrival areas
+- [x] Replace flat prototype colors with an original cohesive surface-material foundation
+- [x] Replace glowing work blocks with direct interaction on recognizable objects
+- [x] Add opening orientation, dynamic objectives, contextual explanations, and explicit costs
+- [x] Add an in-game craft glossary and consequence teaching
+- [x] Improve cigar-development explanations and preserve access to unresolved diagnosis
+- [x] Complete automated validation and render review of the rebuilt experience
+- [ ] Complete hands-on validation of the rebuilt experience
+
+The implementation contract and hands-on gate are documented in [docs/implementation/MILESTONE_3A.md](docs/implementation/MILESTONE_3A.md).
+
+## Milestone 3B - first release
 
 - [ ] Commit a recipe and finite leaf allocation
 - [ ] Produce and age a tiny batch

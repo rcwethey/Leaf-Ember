@@ -143,17 +143,10 @@ public sealed class PrototypeHud : MonoBehaviour
     private void OnGUI()
     {
         EnsureStyles();
-        DrawStatusPanel();
-        DrawControls();
-        DrawInteractionPrompt();
 
         if (IsModalOpen)
         {
             DrawModal();
-        }
-        else
-        {
-            DrawCrosshair();
         }
 
         if (!string.IsNullOrWhiteSpace(toast) && UnityEngine.Time.unscaledTime < toastUntil)

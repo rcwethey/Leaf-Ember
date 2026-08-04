@@ -33,8 +33,10 @@ public sealed class FincaPrototypeLauncher : MonoBehaviour
 
         PrototypeHud hud = world.AddComponent<PrototypeHud>();
         CigarDevelopmentView cigarView = world.AddComponent<CigarDevelopmentView>();
+        FincaExperienceHud experienceHud = world.AddComponent<FincaExperienceHud>();
         Camera playerCamera = CreatePlayerCamera();
-        Func<bool> inputBlocked = () => hud.IsModalOpen || cigarView.IsOpen;
+        Func<bool> inputBlocked = () =>
+            hud.IsModalOpen || cigarView.IsOpen || experienceHud.IsModalOpen;
         GameObject player = CreatePlayer(
             playerCamera,
             inputBlocked,
@@ -52,6 +54,11 @@ public sealed class FincaPrototypeLauncher : MonoBehaviour
             player.transform,
             interactor);
         cigarView.Initialize(eventBus, calendar, cigarDevelopment);
+        experienceHud.Initialize(
+            calendar,
+            cigarDevelopment,
+            interactor,
+            () => hud.IsModalOpen || cigarView.IsOpen);
     }
 
     private static Camera CreatePlayerCamera()
@@ -77,7 +84,7 @@ public sealed class FincaPrototypeLauncher : MonoBehaviour
         out PlayerInteractor interactor)
     {
         GameObject player = new("Founder");
-        player.transform.position = new Vector3(-2f, 0.4f, -4f);
+        player.transform.position = new Vector3(0f, 0.55f, -45f);
 
         CharacterController characterController = player.AddComponent<CharacterController>();
         characterController.height = 1.8f;

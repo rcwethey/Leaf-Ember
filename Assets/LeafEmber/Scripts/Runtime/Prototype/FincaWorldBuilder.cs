@@ -4,43 +4,11 @@ using UnityEngine;
 namespace LeafEmber.Prototype
 {
 
-public static class FincaWorldBuilder
+public static partial class FincaWorldBuilder
 {
     public static void BuildEnvironment(Transform parent)
     {
-        Material earth = CreateMaterial("Earth", new Color(0.28f, 0.23f, 0.14f));
-        Material grass = CreateMaterial("Grass", new Color(0.25f, 0.39f, 0.18f));
-        Material path = CreateMaterial("Path", new Color(0.47f, 0.36f, 0.22f));
-        Material wood = CreateMaterial("Wood", new Color(0.34f, 0.20f, 0.11f));
-        Material clay = CreateMaterial("Clay", new Color(0.62f, 0.33f, 0.19f));
-        Material plaster = CreateMaterial("Plaster", new Color(0.72f, 0.65f, 0.49f));
-        Material leaf = CreateMaterial("Leaf", new Color(0.31f, 0.48f, 0.20f));
-        Material curedLeaf = CreateMaterial("Cured Leaf", new Color(0.50f, 0.31f, 0.13f));
-        Material focus = CreateMaterial("Focused Work", new Color(0.76f, 0.46f, 0.16f));
-        Material inspect = CreateMaterial("Inspection", new Color(0.20f, 0.48f, 0.46f));
-        Material stem = CreateMaterial("Tobacco Stem", new Color(0.18f, 0.30f, 0.11f));
-        Material darkWood = CreateMaterial("Dark Timber", new Color(0.18f, 0.11f, 0.07f));
-        Material metal = CreateMaterial("Workshop Metal", new Color(0.34f, 0.36f, 0.34f));
-        Material water = CreateMaterial("Cistern Water", new Color(0.12f, 0.32f, 0.34f));
-        Material nearHill = CreateMaterial("Near Hills", new Color(0.19f, 0.31f, 0.16f));
-        Material farHill = CreateMaterial("Far Hills", new Color(0.24f, 0.34f, 0.28f));
-
-        HandmadeFincaAssets.ConfigureAtmosphere();
-        HandmadeFincaAssets.CreateDistantHills(parent, nearHill, farHill);
-        CreateBox("Finca Ground", parent, new Vector3(0f, -0.3f, 2f), new Vector3(52f, 0.6f, 46f), grass);
-        CreateBox("Courtyard", parent, new Vector3(0f, 0.02f, 0f), new Vector3(18f, 0.08f, 14f), earth);
-        CreatePath(parent, path, new Vector3(0f, 0.07f, 7f), new Vector3(4f, 0.06f, 24f));
-        CreatePath(parent, path, new Vector3(8f, 0.07f, 1f), new Vector3(18f, 0.06f, 3f));
-        CreatePath(parent, path, new Vector3(-10f, 0.07f, 6f), new Vector3(16f, 0.06f, 3f));
-
-        BuildFieldEdge(parent, leaf, stem, earth, inspect);
-        BuildCuringBarn(parent, wood, clay, curedLeaf, inspect);
-        BuildFermentationRoom(parent, plaster, clay, wood, curedLeaf, focus);
-        BuildLeafStorage(parent, plaster, wood, curedLeaf, darkWood);
-        BuildWorkshop(parent, plaster, clay, wood, curedLeaf, metal, focus);
-        BuildAgingRoom(parent, wood, plaster, curedLeaf, inspect);
-        BuildOffice(parent, plaster, clay, wood, focus);
-        AddCourtyardDetails(parent, wood, clay, leaf, curedLeaf, water);
+        BuildExpandedEnvironment(parent);
     }
 
     private static void BuildFieldEdge(
@@ -418,7 +386,12 @@ public static class FincaWorldBuilder
         label.color = new Color(0.95f, 0.88f, 0.65f);
     }
 
-    private static Material CreateMaterial(string name, Color color)
+    private static Material CreateMaterial(
+        string name,
+        Color color,
+        string textureResource = null,
+        Vector2? textureScale = null,
+        float smoothness = 0.18f)
     {
         Shader shader = Shader.Find("Universal Render Pipeline/Lit");
         if (shader == null)
@@ -431,6 +404,26 @@ public static class FincaWorldBuilder
             name = $"Prototype {name}",
             color = color,
         };
+        if (material.HasProperty("_Smoothness"))
+        {
+            material.SetFloat("_Smoothness", smoothness);
+        }
+
+        if (!string.IsNullOrWhiteSpace(textureResource))
+        {
+            Texture2D texture = Resources.Load<Texture2D>(textureResource);
+            if (texture != null)
+            {
+                material.mainTexture = texture;
+                material.mainTextureScale = textureScale ?? Vector2.one;
+                if (material.HasProperty("_BaseMap"))
+                {
+                    material.SetTexture("_BaseMap", texture);
+                    material.SetTextureScale("_BaseMap", textureScale ?? Vector2.one);
+                }
+            }
+        }
+
         return material;
     }
 }

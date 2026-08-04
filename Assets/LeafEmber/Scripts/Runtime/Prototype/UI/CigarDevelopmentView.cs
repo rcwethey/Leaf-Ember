@@ -224,6 +224,16 @@ public sealed class CigarDevelopmentView : MonoBehaviour
             return;
         }
 
+        TastingRecordState unresolved = development.Tastings.LastOrDefault(
+            tasting => !development.Diagnoses.Any(
+                diagnosis => diagnosis.prototypeId == tasting.prototypeId));
+        if (unresolved != null)
+        {
+            latestTasting = unresolved;
+            page = Page.TastingResult;
+            return;
+        }
+
         page = Page.Notebook;
     }
 
@@ -395,7 +405,8 @@ public sealed class CigarDevelopmentView : MonoBehaviour
         return
             $"◀  {CigarDevelopmentText.IntentName(selectedIntent)}  ▶\n\n" +
             CigarDevelopmentText.IntentDescription(selectedIntent) +
-            "\n\nThe notebook records audience, occasion, strength, body, dominant and supporting character, progression, finish, and constraints before leaf is selected.";
+            "\n\nWHY THIS MATTERS\n" +
+            "The intent is your reference point. A cigar can be technically sound and still miss the desired occasion, strength, progression, or house character.";
     }
 
     private string FormatBlend()
@@ -403,7 +414,9 @@ public sealed class CigarDevelopmentView : MonoBehaviour
         return
             $"◀  {CigarDevelopmentText.BlendName(selectedBlend)}  ▶\n\n" +
             CigarDevelopmentText.BlendDescription(selectedBlend) +
-            "\n\nEvery component references a finite named lot. The prediction remains uncertain until construction, rest, and tasting produce evidence.";
+            "\n\n" +
+            CigarDevelopmentText.BlendRationale(selectedBlend) +
+            "\n\nEvery component references a named lot. This is a prediction—not a flavor answer. Construction, rest, and tasting turn it into evidence.";
     }
 
     private string FormatConstructionChoices()
@@ -413,9 +426,12 @@ public sealed class CigarDevelopmentView : MonoBehaviour
         string prefix2 = constructionField == 2 ? "▶" : " ";
         return
             $"{prefix0} Conditioning:  ◀ {choices.conditioning} ▶\n\n" +
+            $"    {CigarDevelopmentText.ConditioningEffect(choices.conditioning)}\n\n" +
             $"{prefix1} Compression:   ◀ {choices.compression} ▶\n\n" +
+            $"    {CigarDevelopmentText.CompressionEffect(choices.compression)}\n\n" +
             $"{prefix2} Filler form:   ◀ {FormatArrangement(choices.fillerArrangement)} ▶\n\n" +
-            "These are physical decisions, not a timing challenge. They affect measurable density, draw, wrapper integrity, combustion, temperature, and later perception.";
+            $"    {CigarDevelopmentText.ArrangementEffect(choices.fillerArrangement)}\n\n" +
+            "These are physical decisions, not a timing challenge. Their separate consequences will appear as measurements and observations—not a rolling score.";
     }
 
     private string FormatReview()

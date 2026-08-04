@@ -32,6 +32,25 @@ public sealed class FincaPrototypeSmokeTests
         Assert.That(founder.GetComponent<PrototypePlayerController>(), Is.Not.Null);
         Assert.That(founder.GetComponent<PlayerInteractor>(), Is.Not.Null);
         Assert.That(Object.FindFirstObjectByType<PrototypeHud>(), Is.Not.Null);
+        FincaExperienceHud experienceHud =
+            Object.FindFirstObjectByType<FincaExperienceHud>();
+        Assert.That(experienceHud, Is.Not.Null);
+        Assert.That(experienceHud.IsModalOpen, Is.True);
+
+        GameObject entryGate = GameObject.Find("Finca Entry Gate");
+        GameObject estatePlot = GameObject.Find("Estate Tobacco Observation Plot");
+        GameObject workshop = GameObject.Find("Personal Workshop");
+        Assert.That(entryGate, Is.Not.Null);
+        Assert.That(estatePlot, Is.Not.Null);
+        Assert.That(workshop, Is.Not.Null);
+        Assert.That(
+            Vector3.Distance(estatePlot.transform.position, workshop.transform.position),
+            Is.GreaterThan(60f),
+            "Production landmarks should remain spatially distinct.");
+        Assert.That(
+            Resources.Load<Texture2D>("Surfaces/red-clay-earth"),
+            Is.Not.Null,
+            "The finca should retain its authored surface-material foundation.");
         Assert.That(
             Object.FindObjectsByType<FocusedWorkstation>(FindObjectsSortMode.None).Length,
             Is.GreaterThanOrEqualTo(2));

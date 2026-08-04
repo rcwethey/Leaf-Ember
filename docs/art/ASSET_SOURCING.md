@@ -1,7 +1,7 @@
 # Art and asset sourcing
 
 **Status:** Active implementation policy
-**Last reviewed:** 2026-08-02
+**Last reviewed:** 2026-08-03
 
 Leaf & Ember should look cohesive, specific, and materially believable. Downloadable packs can accelerate broad environmental coverage, but they must not dictate the finca's identity or introduce licensing problems into the repository.
 
@@ -27,12 +27,27 @@ The target is grounded stylized realism. Avoid mixing unrelated packs simply bec
 
 ## Current handmade set
 
-The Milestone 2 finca uses code-generated meshes and assembled primitives in:
+The Milestone 3A finca uses code-generated meshes and assembled primitives in:
 
 - HandmadeFincaAssets.Geometry.cs
 - HandmadeFincaAssets.Props.cs
+- HandmadeFincaAssets.Furnishings.cs
 
-They provide tobacco plants, curing racks, a pilón, bales, rolling tools, aging storage, tasting furniture, shade trees, a cistern, gabled roofs, distant ridges, and atmosphere. They are repository-owned prototype assets and can be freely replaced with authored prefabs later.
+They provide custom ground, path, courtyard, tobacco, roof, and ridge meshes plus tobacco plants, curing racks, a pilón, bales, rolling tools, aging storage, tasting furniture, fences, an entry gate, physical signs, supplies, lighting, vegetation, and atmosphere. They are repository-owned prototype assets and can be freely replaced with authored prefabs later.
+
+## Current generated surface set
+
+Milestone 3A adds five original, repository-owned bitmap foundations under `Assets/LeafEmber/Resources/Surfaces`. They were generated in built-in image-generation mode, reviewed in isolation and in Unity, then tint-adjusted through runtime materials:
+
+| File | Generation brief |
+| --- | --- |
+| `red-clay-earth.png` | Seamless flat diffuse red-clay courtyard and footpath, subtle compaction and dry variation, no objects or lighting |
+| `lime-plaster.png` | Seamless flat diffuse hand-troweled lime plaster, warm off-white, restrained age and mineral variation |
+| `aged-hardwood.png` | Seamless flat diffuse aged tropical hardwood boards, warm brown grain, restrained wear |
+| `clay-roof-tiles.png` | Seamless flat diffuse weathered clay barrel-roof tiles, grounded terracotta variation |
+| `finca-ground-cover.png` | Seamless flat diffuse mixed low tropical finca ground cover, muted olive and dry-brown variation |
+
+The textures establish material identity without claiming final architectural or cultural authenticity. They contain no third-party source files and require no external asset license.
 
 ## Evaluated Unity Asset Store candidates
 

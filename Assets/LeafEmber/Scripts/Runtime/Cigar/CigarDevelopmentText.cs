@@ -53,6 +53,59 @@ public static class CigarDevelopmentText
         };
     }
 
+    public static string BlendRationale(BlendPreset preset)
+    {
+        return preset switch
+        {
+            BlendPreset.EstateForward =>
+                "Likely direction: the mild estate leaf remains recognizable while sourced viso adds enough structure to keep it from feeling thin. Main risk: the quieter profile may lack the intended finish.",
+            BlendPreset.SpiceBridge =>
+                "Likely direction: the stronger Ortega viso drives body, spice, and persistence. Main risk: it can mask the gentler estate character or create more strength than the occasion needs.",
+            BlendPreset.RoundAndRoasted =>
+                "Likely direction: a broader binder and wrapper contribution reinforces roasted character and finish. Main risk: richness may become heavy rather than layered.",
+            _ => string.Empty,
+        };
+    }
+
+    public static string ConditioningEffect(ConditioningChoice choice)
+    {
+        return choice switch
+        {
+            ConditioningChoice.Dry =>
+                "Dry leaf is easier to crack and may sharpen smoke delivery, but it can feel precise in the hand.",
+            ConditioningChoice.Supple =>
+                "Supple leaf resists tearing, though excess surface moisture can make seams tacky and combustion less even.",
+            _ =>
+                "Balanced condition favors elasticity, even tension, and predictable combustion without guaranteeing success.",
+        };
+    }
+
+    public static string CompressionEffect(CompressionChoice choice)
+    {
+        return choice switch
+        {
+            CompressionChoice.Light =>
+                "Light compression encourages an open draw and faster combustion; the final portion may run warm.",
+            CompressionChoice.Firm =>
+                "Firm compression increases density and intensity, but restricted airflow can cause heat, relights, or tunneling.",
+            _ =>
+                "Balanced compression aims for consistent spring and draw while leaving room for placement to matter.",
+        };
+    }
+
+    public static string ArrangementEffect(FillerArrangement arrangement)
+    {
+        return arrangement switch
+        {
+            FillerArrangement.LayeredBook =>
+                "Layered folds can stage components across the cigar, but uneven stacking may create density changes.",
+            FillerArrangement.OpenAirflowChannels =>
+                "Open channels protect airflow and can rescue a firm bunch, though too much openness speeds combustion.",
+            _ =>
+                "Parallel folds provide a controlled baseline with continuous airflow and a comparatively direct progression.",
+        };
+    }
+
     public static string DiagnosisName(DiagnosisKind diagnosis)
     {
         return diagnosis switch

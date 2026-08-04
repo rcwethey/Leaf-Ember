@@ -47,4 +47,6 @@ The pre-implementation design foundation is complete. Milestone 1 is implemented
 
 Milestone 2 is implemented and test-validated. The player can record an intent, choose an authored composition, construct a study cigar, inspect hard evidence, conduct a staged perspective tasting, diagnose a likely cause, preserve a recipe revision, and compare two versions without a universal quality score. The finca now also has a handmade tobacco-specific presentation pass.
 
-Active work moves to Milestone 3: commit a recipe and finite leaf allocation, produce and age a tiny batch, package the release, place it with an initial named buyer, and receive contextual market, relationship, knowledge, and reputation consequences. Interface, accessibility, art, and numerical calibration continue through playable prototypes.
+Milestone 3A is implemented and automated-test validated. The runtime finca now separates the field, curing, fermentation, storage, workshop, aging, office, home, and tasting spaces across a readable estate. Original surface art, recognizable work objects, opening orientation, state-driven objectives, contextual explanations, explicit costs, and an in-game craft glossary replace the previous cramped graybox presentation.
+
+Hands-on review of that rebuilt experience is the remaining gate. Once it passes, Milestone 3B will commit a recipe and finite leaf allocation, produce and age a tiny batch, package the release, place it with an initial named buyer, and receive contextual market, relationship, knowledge, and reputation consequences.

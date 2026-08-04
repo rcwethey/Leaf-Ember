@@ -8,7 +8,7 @@ namespace LeafEmber.Prototype.Player
 
 public sealed class PlayerInteractor : MonoBehaviour
 {
-    private const float InteractionRange = 3.25f;
+    private const float InteractionRange = 4f;
 
     private readonly RaycastHit[] hits = new RaycastHit[8];
     private InputAction interactAction;
@@ -18,6 +18,13 @@ public sealed class PlayerInteractor : MonoBehaviour
     private IInteractable focusedInteractable;
 
     public string CurrentPrompt => focusedInteractable?.InteractionPrompt;
+
+    public InteractionPresentation CurrentPresentation =>
+        focusedInteractable is IContextualInteractable contextual
+            ? contextual.Presentation
+            : null;
+
+    public bool HasFocusedInteraction => focusedInteractable != null;
 
     public void Initialize(
         Camera camera,

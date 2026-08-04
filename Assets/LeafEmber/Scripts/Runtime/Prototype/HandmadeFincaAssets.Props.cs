@@ -47,7 +47,7 @@ public static partial class HandmadeFincaAssets
         }
     }
 
-    public static void CreateCuringRack(
+    public static GameObject CreateCuringRack(
         Transform parent,
         Vector3 position,
         float width,
@@ -99,6 +99,8 @@ public static partial class HandmadeFincaAssets
                 leaf.transform.localScale = new Vector3(0.32f, 0.78f, 0.78f);
             }
         }
+
+        return rack;
     }
 
     public static void CreateLeafBale(
@@ -132,7 +134,7 @@ public static partial class HandmadeFincaAssets
         }
     }
 
-    public static void CreatePilonStack(
+    public static GameObject CreatePilonStack(
         Transform parent,
         Vector3 position,
         Material curedLeaf,
@@ -163,9 +165,11 @@ public static partial class HandmadeFincaAssets
                 curedLeaf);
             leafLayer.transform.localRotation = Quaternion.Euler(0f, layer % 2 == 0 ? 1.5f : -1.5f, 0f);
         }
+
+        return pilon;
     }
 
-    public static void CreateRollingWorkbench(
+    public static GameObject CreateRollingWorkbench(
         Transform parent,
         Vector3 position,
         Material timber,
@@ -175,7 +179,8 @@ public static partial class HandmadeFincaAssets
         GameObject bench = new("Handmade Rolling Workbench");
         bench.transform.SetParent(parent, false);
         bench.transform.localPosition = position;
-        CreateTableFrame(bench.transform, new Vector3(4.7f, 0.16f, 1.65f), timber);
+        GameObject workSurface =
+            CreateTableFrame(bench.transform, new Vector3(4.7f, 0.16f, 1.65f), timber);
 
         for (int index = -1; index <= 1; index++)
         {
@@ -214,9 +219,11 @@ public static partial class HandmadeFincaAssets
             new Vector3(0.055f, 0.24f, 0.055f),
             timber,
             false).transform.localRotation = Quaternion.Euler(0f, 0f, 72f);
+
+        return workSurface;
     }
 
-    public static void CreateAgingShelf(
+    public static GameObject CreateAgingShelf(
         Transform parent,
         Vector3 position,
         Material timber,
@@ -256,9 +263,11 @@ public static partial class HandmadeFincaAssets
                     new Vector3(0f, y + 0.19f, 0.08f),
                     new Vector3(0.86f, 0.28f, 1.2f),
                     boxMaterial,
-                    false);
+                false);
             }
         }
+
+        return shelf;
     }
 
     public static GameObject CreateTastingTable(
