@@ -8,51 +8,26 @@ public static partial class FincaWorldBuilder
 {
     private static void BuildExpandedEnvironment(Transform parent)
     {
-        Material ground = CreateMaterial(
-            "Finca Ground Cover",
-            new Color(0.84f, 0.86f, 0.76f),
-            "Surfaces/finca-ground-cover",
-            Vector2.one,
-            0.05f);
-        Material earth = CreateMaterial(
-            "Compacted Red Clay",
-            new Color(0.72f, 0.70f, 0.65f),
-            "Surfaces/red-clay-earth",
-            Vector2.one,
-            0.04f);
-        Material plaster = CreateMaterial(
-            "Hand-troweled Lime Plaster",
-            new Color(0.92f, 0.88f, 0.75f),
-            "Surfaces/lime-plaster",
-            new Vector2(1.8f, 1.8f),
-            0.08f);
-        Material wood = CreateMaterial(
-            "Aged Hardwood",
-            new Color(0.76f, 0.72f, 0.67f),
-            "Surfaces/aged-hardwood",
-            new Vector2(2f, 2f),
-            0.16f);
-        Material roof = CreateMaterial(
-            "Weathered Clay Roof",
-            new Color(0.82f, 0.78f, 0.70f),
-            "Surfaces/clay-roof-tiles",
-            new Vector2(3.2f, 2.4f),
-            0.10f);
-        Material foundation = CreateMaterial("Stone Foundation", new Color(0.31f, 0.29f, 0.24f));
-        Material leaf = CreateMaterial("Living Tobacco Leaf", new Color(0.22f, 0.43f, 0.16f));
-        Material leafLight = CreateMaterial("Sunlit Tobacco Leaf", new Color(0.36f, 0.56f, 0.22f));
-        Material curedLeaf = CreateMaterial("Cured Tobacco", new Color(0.43f, 0.25f, 0.10f));
-        Material stem = CreateMaterial("Plant Stalk", new Color(0.14f, 0.29f, 0.10f));
-        Material metal = CreateMaterial("Dark Forged Metal", new Color(0.16f, 0.17f, 0.16f), null, null, 0.35f);
-        Material glass = CreateMaterial("Dark Window Glass", new Color(0.08f, 0.16f, 0.17f), null, null, 0.52f);
+        authoredPalette = CreateAuthoredPalette();
+        Material ground = authoredPalette.ground;
+        Material earth = authoredPalette.earth;
+        Material plaster = authoredPalette.plaster;
+        Material wood = authoredPalette.wood;
+        Material roof = authoredPalette.roof;
+        Material foundation = authoredPalette.stone;
+        Material leaf = authoredPalette.livingLeaf;
+        Material leafLight = authoredPalette.livingLeafLight;
+        Material curedLeaf = authoredPalette.curedLeaf;
+        Material stem = authoredPalette.livingLeaf;
+        Material metal = authoredPalette.metal;
+        Material glass = authoredPalette.glass;
         Material water = CreateMaterial("Cistern Water", new Color(0.08f, 0.28f, 0.29f), null, null, 0.65f);
-        Material cloth = CreateMaterial("Natural Fiber", new Color(0.61f, 0.50f, 0.32f));
-        Material nearHill = CreateMaterial("Near Hills", new Color(0.14f, 0.29f, 0.14f));
-        Material farHill = CreateMaterial("Far Hills", new Color(0.19f, 0.30f, 0.24f));
+        Material cloth = authoredPalette.cloth;
 
         ConfigureExpandedAtmosphere();
-        HandmadeFincaAssets.CreateDistantHills(parent, nearHill, farHill);
-        HandmadeFincaAssets.CreateGroundSurface(parent, 144f, 112f, ground);
+        ConfigureAuthoredSky();
+        InstantiateBackdrop(parent);
+        InstantiateTerrain(parent);
         HandmadeFincaAssets.CreateCourtyardSurface(
             parent,
             new Vector3(0f, 0f, -8f),
@@ -93,7 +68,7 @@ public static partial class FincaWorldBuilder
         RenderSettings.fogStartDistance = 72f;
         RenderSettings.fogEndDistance = 185f;
         RenderSettings.fogColor = new Color(0.58f, 0.67f, 0.65f);
-        RenderSettings.ambientIntensity = 0.72f;
+        RenderSettings.ambientIntensity = 0.66f;
     }
 
     private static void BuildPathNetwork(Transform parent, Material earth)
@@ -180,12 +155,12 @@ public static partial class FincaWorldBuilder
         Material wood,
         Material metal)
     {
-        HandmadeFincaAssets.CreateFenceLine(parent, new Vector3(-66f, 0f, -52f), new Vector3(-3f, 0f, -52f), wood);
-        HandmadeFincaAssets.CreateFenceLine(parent, new Vector3(3f, 0f, -52f), new Vector3(66f, 0f, -52f), wood);
-        HandmadeFincaAssets.CreateFenceLine(parent, new Vector3(-66f, 0f, 52f), new Vector3(66f, 0f, 52f), wood);
-        HandmadeFincaAssets.CreateFenceLine(parent, new Vector3(-66f, 0f, -52f), new Vector3(-66f, 0f, 52f), wood);
-        HandmadeFincaAssets.CreateFenceLine(parent, new Vector3(66f, 0f, -52f), new Vector3(66f, 0f, 52f), wood);
-        HandmadeFincaAssets.CreateEntryGate(parent, new Vector3(0f, 0f, -52f), wood, metal);
+        InstantiateFenceLine(parent, new Vector3(-66f, 0f, -52f), new Vector3(-3f, 0f, -52f));
+        InstantiateFenceLine(parent, new Vector3(3f, 0f, -52f), new Vector3(66f, 0f, -52f));
+        InstantiateFenceLine(parent, new Vector3(-66f, 0f, 52f), new Vector3(66f, 0f, 52f));
+        InstantiateFenceLine(parent, new Vector3(-66f, 0f, -52f), new Vector3(-66f, 0f, 52f));
+        InstantiateFenceLine(parent, new Vector3(66f, 0f, -52f), new Vector3(66f, 0f, 52f));
+        InstantiateEntryGate(parent, new Vector3(0f, 0f, -52f));
     }
 
     private static void BuildExpandedField(
@@ -197,28 +172,21 @@ public static partial class FincaWorldBuilder
         Material leafLight)
     {
         Transform field = CreateZone("Estate Tobacco Observation Plot", parent, new Vector3(-46f, 0f, -10f));
-        CreateBox(
-            "Worked Red-soil Plot",
-            field,
-            new Vector3(0f, 0.01f, 0f),
-            new Vector3(28f, 0.12f, 31f),
-            earth);
-        for (int x = -12; x <= 12; x += 3)
+        InstantiateFieldPlot(field);
+        for (int x = -12; x <= 12; x += 4)
         {
-            for (int z = -12; z <= 12; z += 3)
+            for (int z = -12; z <= 12; z += 4)
             {
                 float phase = ((x + 12) * 0.23f) + ((z + 12) * 0.17f);
-                HandmadeFincaAssets.CreateTobaccoPlant(
+                InstantiateAuthoredTobacco(
                     field,
-                    new Vector3(x, 0.10f, z),
-                    1.58f + (Mathf.Sin(phase) * 0.14f),
-                    stem,
-                    ((x + z) / 3) % 2 == 0 ? leaf : leafLight,
-                    phase);
+                    new Vector3(x, 0.08f, z),
+                    phase * Mathf.Rad2Deg,
+                    0.96f + (Mathf.Sin(phase) * 0.08f));
             }
         }
 
-        HandmadeFincaAssets.CreateFenceLine(field, new Vector3(-14.5f, 0f, -15.6f), new Vector3(14.5f, 0f, -15.6f), wood);
+        InstantiateFenceLine(field, new Vector3(-14.5f, 0f, -15.6f), new Vector3(14.5f, 0f, -15.6f));
         GameObject plotSign = HandmadeFincaAssets.CreatePhysicalSign(
             field,
             new Vector3(0f, 1.45f, -16.1f),
@@ -255,15 +223,16 @@ public static partial class FincaWorldBuilder
             glass,
             "CURING BARN");
         GameObject firstRack = null;
-        for (int index = -2; index <= 2; index++)
+        for (int index = -1; index <= 1; index++)
         {
-            GameObject rack = HandmadeFincaAssets.CreateCuringRack(
+            GameObject rack = InstantiateProductionLod(
+                "CuringRack",
                 barn,
-                new Vector3(index * 3.1f, 0.18f, 1.2f),
-                2.4f,
-                5.6f,
-                wood,
-                curedLeaf);
+                new Vector3(index * 5.4f, 0.28f, 1.2f),
+                Quaternion.Euler(0f, 90f, 0f),
+                Vector3.one * 0.88f,
+                new Vector3(0f, 1.35f, 0f),
+                new Vector3(3.2f, 2.8f, 6f));
             firstRack ??= rack;
         }
 
@@ -272,7 +241,16 @@ public static partial class FincaWorldBuilder
             "hanging cure",
             "Leaves hang with air space between them so color and moisture can change gradually. " +
             "This inspection is free: look for uneven drying, damage, or a barn condition that would justify intervention.");
-        HandmadeFincaAssets.CreateCrateStack(barn, new Vector3(-7f, 0.18f, 6f), wood, 3);
+        for (int index = 0; index < 3; index++)
+        {
+            InstantiatePolyHavenProp(
+                "wooden_crate_01",
+                barn,
+                new Vector3(-7f + (index * 0.78f), 0.34f + ((index % 2) * 0.34f), 6f),
+                Quaternion.Euler(0f, index * 13f, 0f),
+                Vector3.one * 1.12f,
+                "CC0 Curing Barn Crate");
+        }
     }
 
     private static void BuildExpandedFermentation(
@@ -296,23 +274,28 @@ public static partial class FincaWorldBuilder
             foundation,
             glass,
             "FERMENTATION");
-        GameObject workingPilon = HandmadeFincaAssets.CreatePilonStack(
+        GameObject workingPilon = InstantiateProductionAsset(
+            "PilonStack",
             room,
             new Vector3(-3.2f, 0.18f, 1.5f),
-            curedLeaf,
-            wood);
-        HandmadeFincaAssets.CreatePilonStack(
+            Quaternion.identity,
+            Vector3.one,
+            new Vector3(0f, 1.1f, 0f),
+            new Vector3(3.7f, 2.3f, 2.8f));
+        InstantiateProductionAsset(
+            "PilonStack",
             room,
             new Vector3(3.2f, 0.18f, 1.5f),
-            curedLeaf,
-            wood);
+            Quaternion.identity,
+            Vector3.one,
+            new Vector3(0f, 1.1f, 0f),
+            new Vector3(3.7f, 2.3f, 2.8f));
         FocusedWorkstation station = workingPilon.AddComponent<FocusedWorkstation>();
         station.Configure(
             "turn the pilot pilón",
             "Open the fermenting stack, compare warmth and moisture across its layers, then rebuild it " +
             "so transformation remains even. This prototype records the time commitment while the full process simulation arrives later.",
             1);
-        HandmadeFincaAssets.CreateWarmLantern(room, new Vector3(0f, 3.2f, -2f), foundation, glass);
     }
 
     private static void BuildExpandedStorage(
@@ -337,25 +320,46 @@ public static partial class FincaWorldBuilder
             foundation,
             glass,
             "LEAF STORAGE");
-        for (int index = -2; index <= 2; index++)
+        for (int index = -1; index <= 1; index++)
         {
-            HandmadeFincaAssets.CreateLeafBale(
+            InstantiateProductionAsset(
+                "PilonStack",
                 storage,
-                new Vector3(index * 2.55f, 0.82f, 2.6f),
-                new Vector3(2.05f, 1.35f, 2.5f),
-                curedLeaf,
-                foundation);
+                new Vector3(index * 3.2f, 0.18f, 2.6f),
+                Quaternion.Euler(0f, index * 4f, 0f),
+                new Vector3(0.72f, 0.58f, 0.72f),
+                new Vector3(0f, 1.1f, 0f),
+                new Vector3(3.7f, 2.3f, 2.8f));
         }
 
-        GameObject cabinet = CreateBox(
-            "Provenance Cabinet",
+        GameObject cabinet = InstantiateProductionAsset(
+            "AgingShelf",
             storage,
-            new Vector3(0f, 1.45f, -5.5f),
-            new Vector3(4.8f, 2.8f, 0.72f),
-            wood);
+            new Vector3(0f, 0.18f, -5.5f),
+            Quaternion.Euler(0f, 180f, 0f),
+            new Vector3(1.75f, 1f, 1f),
+            new Vector3(0f, 1.5f, 0f),
+            new Vector3(2.4f, 3f, 0.95f));
+        cabinet.name = "Authored Provenance Cabinet";
         cabinet.AddComponent<LeafLotCabinet>();
-        HandmadeFincaAssets.CreateSackStack(storage, new Vector3(6f, 0.18f, 5f), cloth, 5);
-        HandmadeFincaAssets.CreateCrateStack(storage, new Vector3(-6f, 0.18f, 5f), wood, 3);
+        for (int index = 0; index < 3; index++)
+        {
+            InstantiatePolyHavenProp(
+                "wooden_crate_01",
+                storage,
+                new Vector3(-5.6f + (index * 0.82f), 0.32f + ((index % 2) * 0.34f), 4.6f),
+                Quaternion.Euler(0f, index * 18f, 0f),
+                Vector3.one * 1.15f,
+                "CC0 Provenance Crate");
+        }
+
+        InstantiatePolyHavenProp(
+            "wooden_ladder",
+            storage,
+            new Vector3(6.4f, 0.12f, 4.9f),
+            Quaternion.Euler(0f, -18f, 0f),
+            Vector3.one * 1.65f,
+            "CC0 Storage Ladder");
     }
 
     private static void BuildExpandedWorkshop(
@@ -380,22 +384,35 @@ public static partial class FincaWorldBuilder
             foundation,
             glass,
             "PERSONAL WORKSHOP");
-        GameObject workSurface = HandmadeFincaAssets.CreateRollingWorkbench(
+        GameObject workSurface = InstantiateProductionAsset(
+            "RollingWorkbench",
             workshop,
             new Vector3(0f, 0.18f, 1.6f),
-            wood,
-            curedLeaf,
-            metal);
+            Quaternion.identity,
+            Vector3.one,
+            new Vector3(0f, 0.72f, 0f),
+            new Vector3(3.6f, 1.45f, 1.7f));
         workSurface.AddComponent<CigarWorkbench>();
-        HandmadeFincaAssets.CreateCrateStack(workshop, new Vector3(-6.5f, 0.18f, 4.8f), wood, 3);
-        HandmadeFincaAssets.CreateWarmLantern(workshop, new Vector3(-2.5f, 3.1f, -1f), metal, glass);
-        HandmadeFincaAssets.CreateWarmLantern(workshop, new Vector3(2.5f, 3.1f, -1f), metal, glass);
-        CreateBox(
-            "Wrapper Conditioning Cabinet",
+        for (int index = 0; index < 2; index++)
+        {
+            InstantiatePolyHavenProp(
+                "wooden_crate_01",
+                workshop,
+                new Vector3(-6.5f + (index * 0.85f), 0.35f, 4.8f),
+                Quaternion.Euler(0f, index * 14f, 0f),
+                Vector3.one * 1.18f,
+                "CC0 Workshop Crate");
+        }
+
+        GameObject conditioningCabinet = InstantiateProductionAsset(
+            "AgingShelf",
             workshop,
-            new Vector3(6.7f, 1.35f, 4.9f),
-            new Vector3(2.1f, 2.7f, 1.25f),
-            wood);
+            new Vector3(6.4f, 0.18f, 4.7f),
+            Quaternion.Euler(0f, 180f, 0f),
+            new Vector3(0.86f, 0.92f, 0.86f),
+            new Vector3(0f, 1.5f, 0f),
+            new Vector3(2.4f, 3f, 0.95f));
+        conditioningCabinet.name = "Authored Wrapper Conditioning Cabinet";
     }
 
     private static void BuildExpandedAging(
@@ -419,22 +436,24 @@ public static partial class FincaWorldBuilder
             foundation,
             glass,
             "AGING ROOM");
-        for (int index = -3; index <= 3; index++)
+        GameObject ledgerShelf = null;
+        for (int index = -2; index <= 2; index++)
         {
-            HandmadeFincaAssets.CreateAgingShelf(
+            GameObject shelf = InstantiateProductionAsset(
+                "AgingShelf",
                 aging,
-                new Vector3(index * 2.25f, 0.18f, 3.4f),
-                wood,
-                curedLeaf);
+                new Vector3(index * 2.75f, 0.18f, 3.4f),
+                Quaternion.identity,
+                Vector3.one,
+                new Vector3(0f, 1.5f, 0f),
+                new Vector3(2.4f, 3f, 0.95f));
+            if (index == 0)
+            {
+                ledgerShelf = shelf;
+            }
         }
 
-        GameObject ledger = CreateBox(
-            "Aging Ledger Table",
-            aging,
-            new Vector3(0f, 0.92f, -4.2f),
-            new Vector3(3.6f, 0.16f, 1.25f),
-            wood);
-        InformationStation station = ledger.AddComponent<InformationStation>();
+        InformationStation station = ledgerShelf.AddComponent<InformationStation>();
         station.Configure(
             "aging ledger",
             "No mature house release exists yet. The ledger will preserve batch identity, storage history, " +
@@ -461,26 +480,36 @@ public static partial class FincaWorldBuilder
             foundation,
             glass,
             "FINCA OFFICE");
-        GameObject desk = CreateBox(
-            "Planning Desk Surface",
+        GameObject desk = InstantiateProductionAsset(
+            "PlanningDesk",
             office,
-            new Vector3(0f, 0.92f, 1f),
-            new Vector3(4.2f, 0.18f, 1.7f),
-            wood);
-        CreateTableLegs(office, new Vector3(0f, 0.18f, 1f), new Vector2(4.2f, 1.7f), wood);
+            new Vector3(0f, 0.18f, 1f),
+            Quaternion.identity,
+            Vector3.one,
+            new Vector3(0f, 0.65f, 0f),
+            new Vector3(3.8f, 1.35f, 1.6f));
         FocusedWorkstation station = desk.AddComponent<FocusedWorkstation>();
         station.Configure(
             "organize the house records",
             "Reconcile lot provenance, upcoming checkpoints, and workshop evidence. Reading is free; " +
             "deliberately reorganizing the working record consumes focused time.",
             1);
-        CreateBox(
-            "Records Cabinet",
+        GameObject recordsCabinet = InstantiateProductionAsset(
+            "AgingShelf",
             office,
-            new Vector3(-5.6f, 1.5f, 4.2f),
-            new Vector3(2.2f, 3f, 1.2f),
-            wood);
-        HandmadeFincaAssets.CreatePorchBench(office, new Vector3(3.8f, 0.18f, -7.6f), 0f, wood);
+            new Vector3(-5.6f, 0.18f, 4.2f),
+            Quaternion.identity,
+            new Vector3(0.88f, 1f, 1f),
+            new Vector3(0f, 1.5f, 0f),
+            new Vector3(2.4f, 3f, 0.95f));
+        recordsCabinet.name = "Authored Records Cabinet";
+        InstantiatePolyHavenProp(
+            "painted_wooden_bench",
+            office,
+            new Vector3(3.8f, 0.18f, -7.6f),
+            Quaternion.identity,
+            Vector3.one * 1.8f,
+            "CC0 Office Veranda Bench");
     }
 
     private static void BuildHomestead(
@@ -504,9 +533,20 @@ public static partial class FincaWorldBuilder
             foundation,
             glass,
             "CASA DE LA FINCA");
-        HandmadeFincaAssets.CreatePorchBench(home, new Vector3(-4f, 0.18f, -8.1f), 0f, wood);
-        HandmadeFincaAssets.CreateSackStack(home, new Vector3(6.6f, 0.18f, 4.6f), cloth, 3);
-        HandmadeFincaAssets.CreateWarmLantern(home, new Vector3(0f, 2.8f, -7.5f), foundation, glass);
+        InstantiatePolyHavenProp(
+            "painted_wooden_bench",
+            home,
+            new Vector3(-4f, 0.18f, -8.1f),
+            Quaternion.identity,
+            Vector3.one * 1.9f,
+            "CC0 Homestead Veranda Bench");
+        InstantiatePolyHavenProp(
+            "wooden_crate_01",
+            home,
+            new Vector3(6.6f, 0.34f, 4.6f),
+            Quaternion.Euler(0f, 12f, 0f),
+            Vector3.one * 1.15f,
+            "CC0 Homestead Utility Crate");
     }
 
     private static void BuildTastingCourtyard(
@@ -523,48 +563,51 @@ public static partial class FincaWorldBuilder
         Material leaf)
     {
         Transform patio = CreateZone("Shaded Tasting Patio", parent, new Vector3(1f, 0f, -7f));
-        CreatePergola(patio, wood, roof);
-        GameObject table = HandmadeFincaAssets.CreateTastingTable(
+        GameObject tastingSet = InstantiateAuthoredModel(
+            "Environment/Authored/Courtyard/TastingPergolaSet",
             patio,
             new Vector3(0f, 0.10f, 0f),
-            wood,
-            curedLeaf,
-            earth);
-        table.AddComponent<TastingTable>();
-        HandmadeFincaAssets.CreatePorchBench(patio, new Vector3(-3.2f, 0.10f, 0f), 90f, wood);
-        HandmadeFincaAssets.CreatePorchBench(patio, new Vector3(3.2f, 0.10f, 0f), -90f, wood);
-        HandmadeFincaAssets.CreateWarmLantern(patio, new Vector3(-4.5f, 2.8f, -2.4f), metal, glass);
-        HandmadeFincaAssets.CreateWarmLantern(patio, new Vector3(4.5f, 2.8f, 2.4f), metal, glass);
-        HandmadeFincaAssets.CreateCistern(
+            Quaternion.identity,
+            Vector3.one,
+            "Authored Tasting Pergola and Furniture");
+        AddBoxCollider(
+            tastingSet,
+            new Vector3(0f, 0.78f, 0f),
+            new Vector3(2.8f, 1.3f, 2.8f));
+        tastingSet.AddComponent<TastingTable>();
+        InstantiateAuthoredModel(
+            "Environment/Authored/Courtyard/CourtyardCistern",
             parent,
             new Vector3(-9.5f, 0.08f, -4f),
-            earth,
-            water);
-        CreateCourtyardEdge(parent, new Vector3(0f, 0f, -8f), 13.8f, 10.8f, foundation);
-        HandmadeFincaAssets.CreatePorchBench(
+            Quaternion.identity,
+            Vector3.one,
+            "Authored Courtyard Cistern");
+        InstantiatePolyHavenProp(
+            "painted_wooden_bench",
             parent,
             new Vector3(-7.8f, 0.10f, -16.8f),
-            18f,
-            wood);
-        HandmadeFincaAssets.CreatePorchBench(
+            Quaternion.Euler(0f, 18f, 0f),
+            Vector3.one * 1.75f,
+            "CC0 Courtyard Bench West");
+        InstantiatePolyHavenProp(
+            "painted_wooden_bench",
             parent,
             new Vector3(8.2f, 0.10f, -16.2f),
-            -18f,
-            wood);
-        HandmadeFincaAssets.CreateBananaPlant(
+            Quaternion.Euler(0f, -18f, 0f),
+            Vector3.one * 1.75f,
+            "CC0 Courtyard Bench East");
+        InstantiateBroadleafCluster(
             parent,
             new Vector3(-13.6f, 0f, -16.5f),
-            0.78f,
-            stem,
-            leaf);
-        HandmadeFincaAssets.CreateBananaPlant(
+            18f,
+            2.4f);
+        InstantiateBroadleafCluster(
             parent,
             new Vector3(13.2f, 0f, -15.5f),
-            0.72f,
-            stem,
-            leaf);
-        CreateCourtyardPlanter(parent, new Vector3(-11.5f, 0f, 0f), earth, stem, leaf);
-        CreateCourtyardPlanter(parent, new Vector3(11.8f, 0f, -0.5f), earth, stem, leaf);
+            -24f,
+            2.2f);
+        InstantiateBroadleafCluster(parent, new Vector3(-11.5f, 0f, 0f), 36f, 1.8f);
+        InstantiateBroadleafCluster(parent, new Vector3(11.8f, 0f, -0.5f), -42f, 1.8f);
     }
 
     private static void AddLandscapeDetail(
@@ -581,22 +624,49 @@ public static partial class FincaWorldBuilder
             new(-55f, 0f, 35f),
             new(-46f, 0f, 43f),
             new(-24f, 0f, 44f),
+            new(-5f, 0f, 47f),
+            new(14f, 0f, 46f),
             new(28f, 0f, 44f),
             new(49f, 0f, 34f),
+            new(56f, 0f, 23f),
             new(56f, 0f, 8f),
+            new(56f, 0f, -12f),
             new(53f, 0f, -25f),
             new(38f, 0f, -45f),
+            new(11f, 0f, -47f),
+            new(-14f, 0f, -47f),
             new(-39f, 0f, -43f),
             new(-57f, 0f, -31f),
+            new(-60f, 0f, -2f),
+            new(-60f, 0f, 18f),
         };
         for (int index = 0; index < treePositions.Length; index++)
         {
-            HandmadeFincaAssets.CreateShadeTree(
+            InstantiateIslandTree(
                 parent,
                 treePositions[index],
-                1.15f + ((index % 3) * 0.12f),
-                wood,
-                index % 2 == 0 ? leaf : leafLight);
+                index * 37f,
+                2.85f + ((index % 4) * 0.28f));
+        }
+
+        Vector3[] jacarandaPositions =
+        {
+            new(-50f, 0f, 29f),
+            new(-31f, 0f, 47f),
+            new(7f, 0f, 49f),
+            new(45f, 0f, 36f),
+            new(55f, 0f, -2f),
+            new(47f, 0f, -36f),
+            new(-27f, 0f, -46f),
+            new(-58f, 0f, -20f),
+        };
+        for (int index = 0; index < jacarandaPositions.Length; index++)
+        {
+            InstantiateJacarandaTree(
+                parent,
+                jacarandaPositions[index],
+                19f + (index * 43f),
+                0.72f + ((index % 3) * 0.09f));
         }
 
         Vector3[] windbreakPositions =
@@ -610,11 +680,60 @@ public static partial class FincaWorldBuilder
         };
         foreach (Vector3 position in windbreakPositions)
         {
-            HandmadeFincaAssets.CreateBananaPlant(parent, position, 1.08f, stem, leafLight);
+            InstantiateBroadleafCluster(
+                parent,
+                position,
+                (position.x + position.z) * 5f,
+                2.5f);
         }
 
-        HandmadeFincaAssets.CreateBarrelCluster(parent, new Vector3(22f, 0f, -25f), wood, metal);
-        HandmadeFincaAssets.CreateSackStack(parent, new Vector3(-26f, 0f, 27f), cloth, 4);
+        Vector3[] courtyardPlantings =
+        {
+            new(-28f, 0f, -27f),
+            new(-10f, 0f, -27f),
+            new(8f, 0f, -29f),
+            new(26f, 0f, -27f),
+            new(-24f, 0f, 24f),
+            new(-18f, 0f, 25f),
+            new(19f, 0f, 25f),
+            new(42f, 0f, 11f),
+            new(42f, 0f, -16f),
+            new(-51f, 0f, 9f),
+        };
+        for (int index = 0; index < courtyardPlantings.Length; index++)
+        {
+            InstantiateBroadleafCluster(
+                parent,
+                courtyardPlantings[index],
+                index * 41f,
+                1.85f + ((index % 3) * 0.24f));
+        }
+
+        for (int index = 0; index < 40; index++)
+        {
+            float angle = index * Mathf.PI * 2f / 40f;
+            float radiusX = 17f + ((index % 4) * 1.3f);
+            float radiusZ = 13f + ((index % 3) * 1.1f);
+            InstantiateGroundCluster(
+                parent,
+                new Vector3(
+                    Mathf.Cos(angle) * radiusX,
+                    0.02f,
+                    -8f + (Mathf.Sin(angle) * radiusZ)),
+                index * 29f,
+                1.25f + ((index % 3) * 0.18f));
+        }
+
+        for (int index = 0; index < 3; index++)
+        {
+            InstantiatePolyHavenProp(
+                "wooden_crate_01",
+                parent,
+                new Vector3(22f + (index * 0.75f), 0.34f, -25f + ((index % 2) * 0.62f)),
+                Quaternion.Euler(0f, index * 17f, 0f),
+                Vector3.one * 1.15f,
+                "CC0 Courtyard Supply Crate");
+        }
     }
 
     private static Transform CreateDetailedBuilding(
@@ -630,6 +749,24 @@ public static partial class FincaWorldBuilder
         Material glass,
         string signText)
     {
+        if (authoredPalette != null)
+        {
+            Transform authoredBuilding = CreateZone(name, parent, position);
+            authoredBuilding.localRotation = Quaternion.Euler(0f, yaw, 0f);
+            InstantiateBuildingShell(
+                GetAuthoredBuildingAssetName(name),
+                authoredBuilding,
+                size);
+            GameObject authoredSign = HandmadeFincaAssets.CreatePhysicalSign(
+                authoredBuilding,
+                new Vector3(0f, 3.15f, -(size.y * 0.5f) - 0.38f),
+                signText,
+                wood,
+                new Color(0.94f, 0.83f, 0.57f));
+            authoredSign.transform.localScale = new Vector3(0.78f, 0.78f, 0.78f);
+            return authoredBuilding;
+        }
+
         Transform building = CreateZone(name, parent, position);
         building.localRotation = Quaternion.Euler(0f, yaw, 0f);
         float halfWidth = size.x * 0.5f;
@@ -737,6 +874,24 @@ public static partial class FincaWorldBuilder
             new Color(0.94f, 0.83f, 0.57f));
         sign.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
         return building;
+    }
+
+    private static string GetAuthoredBuildingAssetName(string buildingName)
+    {
+        return buildingName switch
+        {
+            "Curing Barn" => "CuringBarn",
+            "Fermentation House" => "FermentationHouse",
+            "Leaf Storage" => "LeafStorage",
+            "Personal Workshop" => "PersonalWorkshop",
+            "Aging Room" => "AgingRoom",
+            "Finca Office" => "FincaOffice",
+            "Founder Homestead" => "FounderHomestead",
+            _ => throw new System.ArgumentOutOfRangeException(
+                nameof(buildingName),
+                buildingName,
+                "No authored building shell is registered."),
+        };
     }
 
     private static Material earthMaterialFallback(Material wall)

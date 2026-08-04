@@ -391,7 +391,10 @@ public static partial class FincaWorldBuilder
         Color color,
         string textureResource = null,
         Vector2? textureScale = null,
-        float smoothness = 0.18f)
+        float smoothness = 0.18f,
+        string normalResource = null,
+        bool alphaClip = false,
+        bool doubleSided = false)
     {
         Shader shader = Shader.Find("Universal Render Pipeline/Lit");
         if (shader == null)
@@ -403,6 +406,7 @@ public static partial class FincaWorldBuilder
         {
             name = $"Prototype {name}",
             color = color,
+            enableInstancing = true,
         };
         if (material.HasProperty("_Smoothness"))
         {
@@ -422,6 +426,41 @@ public static partial class FincaWorldBuilder
                     material.SetTextureScale("_BaseMap", textureScale ?? Vector2.one);
                 }
             }
+        }
+
+        if (!string.IsNullOrWhiteSpace(normalResource))
+        {
+            Texture2D normal = Resources.Load<Texture2D>(normalResource);
+            if (normal != null && material.HasProperty("_BumpMap"))
+            {
+                material.SetTexture("_BumpMap", normal);
+                material.EnableKeyword("_NORMALMAP");
+                if (material.HasProperty("_BumpScale"))
+                {
+                    material.SetFloat("_BumpScale", 0.72f);
+                }
+            }
+        }
+
+        if (alphaClip)
+        {
+            if (material.HasProperty("_AlphaClip"))
+            {
+                material.SetFloat("_AlphaClip", 1f);
+            }
+
+            if (material.HasProperty("_Cutoff"))
+            {
+                material.SetFloat("_Cutoff", 0.32f);
+            }
+
+            material.EnableKeyword("_ALPHATEST_ON");
+            material.renderQueue = 2450;
+        }
+
+        if (doubleSided && material.HasProperty("_Cull"))
+        {
+            material.SetFloat("_Cull", 0f);
         }
 
         return material;

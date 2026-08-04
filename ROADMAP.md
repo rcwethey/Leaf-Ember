@@ -130,7 +130,7 @@ The playable contract, deliberate abstractions, validation evidence, and playtes
 - [x] Improve cigar-development explanations and preserve access to unresolved diagnosis
 - [x] Complete automated validation and render review of the rebuilt experience
 - [x] Correct the hands-on performance regression and add hard rendering budgets
-- [ ] Replace the rejected graybox-derived presentation with authored modular environment art, production terrain and foliage, coherent lighting, and LOD/culling
+- [x] Replace the rejected graybox-derived presentation with authored modular environment art, production terrain and foliage, coherent lighting, and LOD/culling
 - [ ] Complete hands-on validation of the rebuilt experience
 
 The implementation contract and hands-on gate are documented in [docs/implementation/MILESTONE_3A.md](docs/implementation/MILESTONE_3A.md).

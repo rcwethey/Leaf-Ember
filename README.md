@@ -15,7 +15,7 @@ The technical foundation and all pre-implementation design gates are complete. M
 - Unity 6 LTS with the Universal Render Pipeline
 - first-person movement and camera control
 - a landmark-driven 144 by 112 meter finca with separated production, residential, social, field, and arrival areas
-- original surface art, detailed regional building prototypes, direct object interaction, and tobacco-specific props
+- imported Blender-authored architecture, terrain, tobacco-production props, CC0 PBR surfaces and vegetation, and direct object interaction
 - opening orientation, dynamic craft objectives, contextual what/why/cost guidance, and an in-game glossary
 - free inspection and confirmed block-costing focused work
 - the three-block, 96-day calendar with scheduled checkpoints and work summaries
@@ -25,7 +25,7 @@ The technical foundation and all pre-implementation design gates are complete. M
 - versioned JSON persistence for player, calendar, estate, inventory, and cigar-development state
 - 23 passing Edit Mode tests and a passing Play Mode startup smoke test
 
-Milestone 3A's spatial and guidance foundation is implemented and automated-test validated, but the first hands-on review rejected its performance and graybox-derived visual presentation. The urgent performance regression is corrected; Milestone 3B remains blocked until an authored environment pass clears hands-on review.
+Milestone 3A's replacement environment is implemented and automated-test/render validated after the first hands-on review rejected the earlier performance and graybox-derived presentation. The new candidate uses imported authored art, measured LODs, and hard rendering budgets. Milestone 3B remains blocked until this candidate clears hands-on play review.
 
 ## Requirements
 

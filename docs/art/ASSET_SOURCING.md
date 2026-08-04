@@ -25,19 +25,19 @@ Prefer handmade or commissioned assets for:
 
 The target is grounded stylized realism. Avoid mixing unrelated packs simply because they are available.
 
-## Current handmade set
+## Superseded runtime-authored set
 
-The Milestone 3A finca uses code-generated meshes and assembled primitives in:
+The rejected Milestone 3A pass used code-generated meshes and assembled primitives in:
 
 - HandmadeFincaAssets.Geometry.cs
 - HandmadeFincaAssets.Props.cs
 - HandmadeFincaAssets.Furnishings.cs
 
-They provide custom ground, path, courtyard, tobacco, roof, and ridge meshes plus tobacco plants, curing racks, a pilón, bales, rolling tools, aging storage, tasting furniture, fences, an entry gate, physical signs, supplies, lighting, vegetation, and atmosphere. They are repository-owned prototype assets and can be freely replaced with authored prefabs later.
+They remain repository-owned fallback and utility code. The active environment retains only useful custom path/courtyard meshes, physical signs, invisible scaffolding, and atmosphere helpers from this layer. Imported authored FBXs now provide the dominant visible architecture, terrain, tobacco, production, courtyard, boundary, prop, and vegetation art.
 
-## Current generated surface set
+## Superseded generated surface set
 
-Milestone 3A adds five original, repository-owned bitmap foundations under `Assets/LeafEmber/Resources/Surfaces`. They were generated in built-in image-generation mode, reviewed in isolation and in Unity, then tint-adjusted through runtime materials:
+The earlier Milestone 3A pass added five original, repository-owned bitmap foundations under `Assets/LeafEmber/Resources/Surfaces`. They are retained as historical/fallback assets but are no longer the active finca material set:
 
 | File | Generation brief |
 | --- | --- |
@@ -48,6 +48,10 @@ Milestone 3A adds five original, repository-owned bitmap foundations under `Asse
 | `finca-ground-cover.png` | Seamless flat diffuse mixed low tropical finca ground cover, muted olive and dry-brown variation |
 
 The textures establish material identity without claiming final architectural or cultural authenticity. They contain no third-party source files and require no external asset license.
+
+## Current authored environment
+
+The failed Milestone 3A hands-on visual gate superseded the generated-surface pass. The replacement pipeline now supplies imported Blender-authored architecture and cigar-specific art plus a tightly scoped CC0 PBR, vegetation, generic-prop, and HDR subset. Its manifest, performance boundaries, validation evidence, and reproducible Blender tooling are documented in [AUTHORED_ENVIRONMENT_PIPELINE.md](AUTHORED_ENVIRONMENT_PIPELINE.md). Automated and screenshot validation pass; hands-on re-review remains pending.
 
 ## Evaluated Unity Asset Store candidates
 

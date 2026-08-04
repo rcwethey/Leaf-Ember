@@ -1,6 +1,6 @@
 # Milestone 3A implementation: finca and player experience
 
-**Status:** Automated-test validated; hands-on visual gate failed
+**Status:** Authored replacement automated/render validated; hands-on re-review pending
 **Started:** 2026-08-03
 **Unity:** 6000.5.4f1
 
@@ -8,7 +8,9 @@ Milestone 3A is a quality gate between the cigar-development prototype and the f
 
 The first-release economy will not be layered on top of an unreadable prototype. The existing deterministic domain systems remain, while their spatial and player-facing presentation is rebuilt.
 
-The first 2026-08-03 hands-on review rejected this pass. The expanded layout and guidance do not compensate for primitive-derived architecture and props that still read as graybox art. The same review exposed an unacceptable performance regression caused by an excessive renderer count multiplied through shadow-casting point lights. The performance fault has been corrected and regression-tested; the visual gate remains failed.
+The first 2026-08-03 hands-on review rejected the expanded graybox-derived pass. Its primitive architecture still read as placeholder art, and an excessive renderer count multiplied through shadow-casting point lights caused an unacceptable performance regression.
+
+The replacement candidate preserves the approved layout and guidance while replacing the dominant visible layer with imported Blender-authored buildings, terrain, tobacco plants, cigar-production equipment, courtyard assets, boundary pieces, and processed CC0 vegetation and generic props. It is automated-test and screenshot validated; it has not yet passed the required hands-on re-review.
 
 ## Success criteria
 
@@ -39,13 +41,14 @@ Travel should make the estate feel inhabited without turning routine movement in
 
 ## Visual contract
 
-The new presentation uses:
+The replacement presentation uses:
 
-- custom terrain, curved path, courtyard, leaf, roof, and hill meshes
-- more detailed plaster-and-timber buildings with foundations, verandas, open doors, framed windows, deep roof overhangs, physical signs, and warm lamps
-- direct interaction with recognizable work objects instead of glowing placeholder blocks
-- denser tobacco rows, hanging cure racks, multiple pilones, leaf bales, provenance storage, rolling equipment, aging shelves, crates, sacks, barrels, benches, and landscape vegetation
-- original generated and visually reviewed ground-cover, red-clay, lime-plaster, aged-hardwood, and clay-roof textures
+- imported authored terrain, distant ridges, seven modular building shells, fences, an entry gate, tobacco plants, and cigar-specific production props
+- plaster-and-timber buildings with foundations, verandas, open doors, framed windows, deep tiled roofs, and physical signs
+- direct interaction attached to recognizable rolling, fermentation, storage, inspection, and tasting objects instead of glowing placeholder blocks
+- PBR ground, laterite, plaster, timber, and roof materials plus a restrained rural HDR sky from the documented CC0 subset
+- processed island-tree, Jacaranda, Bermuda grass, and Calathea LODs; generic CC0 crates, benches, and a ladder
+- invisible primitive colliders and a few temporary interaction/sign markers only, never a dominant visible primitive layer
 
 The target remains grounded stylized realism. These assets establish a cohesive indie art foundation; they are not presented as final production architecture or culturally reviewed reference.
 
@@ -77,7 +80,7 @@ An unresolved tasting can be reopened from the workshop notebook, preventing a p
 - Milestone 3A does not yet create a commercial batch or buyer interaction.
 - The retained guidance interface coexists with temporary focused-work and cigar-development panels; those panels receive clarity improvements now and a complete production UI conversion later.
 - Asset Store source files remain outside the public repository unless a license-safe source pipeline is established.
-- Generated surface images are project-owned visual foundations; tobacco-specific three-dimensional assets remain code-authored prototypes.
+- The earlier generated surface images remain repository-owned historical foundations but are superseded in the active environment by imported PBR and authored FBX assets.
 - Cultural, architectural, and agricultural authenticity still require the research and review process defined by the canonical setting documents.
 
 ## Gate to Milestone 3B
@@ -94,16 +97,16 @@ Milestone 3B may begin once automated validation passes and hands-on play confir
 
 - Unity imports and compiles the rebuilt runtime presentation under Unity 6000.5.4f1 and URP.
 - All 23 Edit Mode tests pass.
-- The Play Mode startup smoke test passes and verifies composition, guidance, direct interaction stations, landmark separation, authored surface loading, and registered domain state.
-- Render review covers the entry approach, central courtyard, estate overview, workshop side, and opening guidance.
-- The procedural scene is capped below 1,000 renderers and permits no shadow-casting point lights. The current validated build creates 910 renderers and zero shadowed point lights.
+- The Play Mode startup smoke test passes and verifies composition, guidance, direct interaction stations, landmark separation, imported architecture, CC0 PBR loading, dense-canopy LOD loading, and registered domain state.
+- Render review covers the entry approach, central courtyard, estate overview, workshop exterior, workshop interior, normal HUD, and close-canopy behavior.
+- The authored scene is capped below 600 renderers and 50 visible built-in primitive meshes, requires at least 80 LOD groups, and permits no shadow-casting point lights. The current validated build creates 404 renderers, 145 LOD groups, eight visible primitive meshes, and zero shadowed point lights.
 
 Automated evidence prevents the layout, surface foundation, and guidance layer from silently disappearing. It cannot decide whether movement, atmosphere, readability, and pacing feel right in hand. That judgment remains the explicit hands-on gate before Milestone 3B.
 
 ## Performance guardrails
 
-Repeated tobacco and landscape foliage must be combined into a small number of meshes rather than emitted as one renderer per leaf. Decorative lanterns may provide restrained local light but must not cast real-time shadows. The prototype caps directional-shadow distance at 55 meters with two cascades.
+Repeated tobacco and landscape foliage use imported shared meshes, GPU-instanced materials, explicit LOD groups, and distance culling rather than one renderer per leaf. Decorative lanterns may provide restrained local light but must not cast real-time shadows. The prototype caps directional-shadow distance at 55 meters with two cascades.
 
 Any future environment pass must keep the Play Mode performance-budget assertions green. A visually richer finca is not acceptable if it makes the interactive build unsafe or uncomfortable to run.
 
-The next visual attempt must use authored modular environment assets, production terrain and foliage, a coherent lighting setup, and measured LOD/culling. Runtime primitive assembly may remain only for invisible scaffolding and temporary interaction markers, not as the dominant visible art layer.
+The replacement candidate now meets the authored-asset and measured-budget requirements. Runtime primitive assembly may remain only for invisible scaffolding and temporary interaction markers, not as the dominant visible art layer. Hands-on acceptance remains the final gate.

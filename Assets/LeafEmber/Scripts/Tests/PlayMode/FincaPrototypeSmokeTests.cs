@@ -48,9 +48,22 @@ public sealed class FincaPrototypeSmokeTests
             Is.GreaterThan(60f),
             "Production landmarks should remain spatially distinct.");
         Assert.That(
-            Resources.Load<Texture2D>("Surfaces/red-clay-earth"),
+            Resources.Load<Texture2D>(
+                "Environment/Materials/red_laterite_soil_stones/" +
+                "red_laterite_soil_stones_diff_1k"),
             Is.Not.Null,
-            "The finca should retain its authored surface-material foundation.");
+            "The finca should load its CC0 PBR laterite foundation.");
+        Assert.That(
+            Resources.Load<GameObject>(
+                "Environment/Authored/Architecture/PersonalWorkshop_LOD0"),
+            Is.Not.Null,
+            "The finca should load its imported authored architecture.");
+        Assert.That(
+            Resources.Load<GameObject>(
+                "Environment/ThirdParty/PolyHaven/jacaranda_tree/" +
+                "jacaranda_tree_LOD1"),
+            Is.Not.Null,
+            "The finca should retain the lightweight dense-canopy tree LOD.");
         Assert.That(
             Object.FindObjectsByType<FocusedWorkstation>(FindObjectsSortMode.None).Length,
             Is.GreaterThanOrEqualTo(2));
@@ -66,6 +79,27 @@ public sealed class FincaPrototypeSmokeTests
 
         Renderer[] renderers =
             Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None);
+        LODGroup[] lodGroups =
+            Object.FindObjectsByType<LODGroup>(FindObjectsSortMode.None);
+        MeshFilter[] meshFilters =
+            Object.FindObjectsByType<MeshFilter>(FindObjectsSortMode.None);
+        int visiblePrimitiveMeshes = 0;
+        foreach (MeshFilter meshFilter in meshFilters)
+        {
+            string meshName = meshFilter.sharedMesh != null
+                ? meshFilter.sharedMesh.name
+                : string.Empty;
+            if (meshName == "Cube" ||
+                meshName == "Cylinder" ||
+                meshName == "Sphere" ||
+                meshName == "Capsule" ||
+                meshName == "Plane" ||
+                meshName == "Quad")
+            {
+                visiblePrimitiveMeshes++;
+            }
+        }
+
         Light[] lights = Object.FindObjectsByType<Light>(FindObjectsSortMode.None);
         int shadowedPointLights = 0;
         foreach (Light light in lights)
@@ -78,11 +112,20 @@ public sealed class FincaPrototypeSmokeTests
 
         TestContext.WriteLine(
             $"Finca performance budget: {renderers.Length} renderers, " +
+            $"{lodGroups.Length} LOD groups, {visiblePrimitiveMeshes} visible primitive meshes, " +
             $"{shadowedPointLights} shadowed point lights.");
         Assert.That(
             renderers.Length,
-            Is.LessThan(1000),
-            "The procedural finca exceeded its renderer budget.");
+            Is.LessThan(600),
+            "The authored finca exceeded its renderer budget.");
+        Assert.That(
+            lodGroups.Length,
+            Is.GreaterThanOrEqualTo(80),
+            "Repeated environment assets should retain authored LOD groups.");
+        Assert.That(
+            visiblePrimitiveMeshes,
+            Is.LessThan(50),
+            "Unity primitives have again become a dominant visible art layer.");
         Assert.That(
             shadowedPointLights,
             Is.Zero,
