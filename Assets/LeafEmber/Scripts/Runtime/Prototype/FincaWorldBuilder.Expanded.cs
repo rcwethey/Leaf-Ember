@@ -88,6 +88,8 @@ public static partial class FincaWorldBuilder
     private static void ConfigureExpandedAtmosphere()
     {
         HandmadeFincaAssets.ConfigureAtmosphere();
+        QualitySettings.shadowDistance = Mathf.Min(QualitySettings.shadowDistance, 55f);
+        QualitySettings.shadowCascades = 2;
         RenderSettings.fogStartDistance = 72f;
         RenderSettings.fogEndDistance = 185f;
         RenderSettings.fogColor = new Color(0.58f, 0.67f, 0.65f);

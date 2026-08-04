@@ -25,7 +25,7 @@ The technical foundation and all pre-implementation design gates are complete. M
 - versioned JSON persistence for player, calendar, estate, inventory, and cigar-development state
 - 23 passing Edit Mode tests and a passing Play Mode startup smoke test
 
-Milestone 3A is implemented and automated-test validated. Hands-on review is the final quality gate before Milestone 3B, the first tiny-batch release.
+Milestone 3A's spatial and guidance foundation is implemented and automated-test validated, but the first hands-on review rejected its performance and graybox-derived visual presentation. The urgent performance regression is corrected; Milestone 3B remains blocked until an authored environment pass clears hands-on review.
 
 ## Requirements
 

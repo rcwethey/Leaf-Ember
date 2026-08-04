@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace LeafEmber.Prototype
 {
@@ -281,9 +283,9 @@ public static partial class HandmadeFincaAssets
         Light light = lantern.AddComponent<Light>();
         light.type = LightType.Point;
         light.color = new Color(1f, 0.66f, 0.34f);
-        light.range = 7f;
-        light.intensity = 1.5f;
-        light.shadows = LightShadows.Soft;
+        light.range = 4.5f;
+        light.intensity = 0.75f;
+        light.shadows = LightShadows.None;
     }
 
     public static void CreateBananaPlant(
@@ -305,20 +307,30 @@ public static partial class HandmadeFincaAssets
             stem,
             false);
 
+        List<Vector3> leafVertices = new();
+        List<Vector2> leafUvs = new();
+        List<int> leafTriangles = new();
         for (int index = 0; index < 7; index++)
         {
-            GameObject broadLeaf = CreateLeaf(
-                plant.transform,
-                "Windbreak Leaf",
+            Matrix4x4 leafTransform = Matrix4x4.TRS(
                 new Vector3(0f, 2.55f * scale, 0f),
-                leaf);
-            broadLeaf.transform.localRotation = Quaternion.Euler(
-                -28f + ((index % 3) * 8f),
-                index * (360f / 7f),
-                0f);
-            broadLeaf.transform.localScale =
-                new Vector3(0.72f * scale, 1.75f * scale, 1.75f * scale);
+                Quaternion.Euler(
+                    -28f + ((index % 3) * 8f),
+                    index * (360f / 7f),
+                    0f),
+                new Vector3(0.72f * scale, 1.75f * scale, 1.75f * scale));
+            AppendLeafGeometry(leafTransform, leafVertices, leafUvs, leafTriangles);
         }
+
+        GameObject combinedLeaves = CreateMeshObject(
+            "Combined Windbreak Leaves",
+            plant.transform,
+            Vector3.zero,
+            leafVertices.ToArray(),
+            leafTriangles.ToArray(),
+            leafUvs.ToArray(),
+            leaf);
+        combinedLeaves.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
     }
 }
 }

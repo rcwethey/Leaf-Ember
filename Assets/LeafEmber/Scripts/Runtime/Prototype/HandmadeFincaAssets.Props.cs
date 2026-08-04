@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace LeafEmber.Prototype
 {
@@ -17,7 +19,7 @@ public static partial class HandmadeFincaAssets
         plant.transform.SetParent(parent, false);
         plant.transform.localPosition = position;
 
-        CreatePrimitive(
+        GameObject stalk = CreatePrimitive(
             PrimitiveType.Cylinder,
             "Stalk",
             plant.transform,
@@ -25,7 +27,12 @@ public static partial class HandmadeFincaAssets
             new Vector3(0.045f, height * 0.45f, 0.045f),
             stemMaterial,
             false);
+        MeshRenderer stalkRenderer = stalk.GetComponent<MeshRenderer>();
+        stalkRenderer.shadowCastingMode = ShadowCastingMode.Off;
 
+        List<Vector3> vertices = new();
+        List<Vector2> uvs = new();
+        List<int> triangles = new();
         for (int level = 0; level < 5; level++)
         {
             float vertical = height * (0.2f + (level * 0.14f));
@@ -33,17 +40,77 @@ public static partial class HandmadeFincaAssets
             for (int side = 0; side < 2; side++)
             {
                 float yaw = (phase * Mathf.Rad2Deg) + (level * 71f) + (side * 180f);
-                GameObject leaf = CreateLeaf(
-                    plant.transform,
-                    $"Broad Leaf {level + 1}",
+                Matrix4x4 leafTransform = Matrix4x4.TRS(
                     new Vector3(0f, vertical, 0f),
-                    leafMaterial);
-                leaf.transform.localRotation = Quaternion.Euler(
-                    8f + (level * 2f),
-                    yaw,
-                    side == 0 ? -5f : 5f);
-                leaf.transform.localScale = new Vector3(leafLength * 0.42f, leafLength, leafLength);
+                    Quaternion.Euler(
+                        8f + (level * 2f),
+                        yaw,
+                        side == 0 ? -5f : 5f),
+                    new Vector3(leafLength * 0.42f, leafLength, leafLength));
+                AppendLeafGeometry(leafTransform, vertices, uvs, triangles);
             }
+        }
+
+        GameObject combinedLeaves = CreateMeshObject(
+            "Combined Broad Leaves",
+            plant.transform,
+            Vector3.zero,
+            vertices.ToArray(),
+            triangles.ToArray(),
+            uvs.ToArray(),
+            leafMaterial);
+        MeshRenderer leafRenderer = combinedLeaves.GetComponent<MeshRenderer>();
+        leafRenderer.shadowCastingMode = ShadowCastingMode.Off;
+        leafRenderer.receiveShadows = true;
+    }
+
+    private static void AppendLeafGeometry(
+        Matrix4x4 leafTransform,
+        List<Vector3> vertices,
+        List<Vector2> uvs,
+        List<int> triangles)
+    {
+        Vector3[] face =
+        {
+            new(0f, 0f, 0f),
+            new(-0.20f, 0.015f, 0.22f),
+            new(-0.43f, 0.045f, 0.55f),
+            new(-0.28f, 0.025f, 0.88f),
+            new(0f, 0f, 1.15f),
+            new(0.28f, 0.025f, 0.88f),
+            new(0.43f, 0.045f, 0.55f),
+            new(0.20f, 0.015f, 0.22f),
+        };
+        int[] front =
+        {
+            0, 1, 2,
+            0, 2, 3,
+            0, 3, 4,
+            0, 4, 5,
+            0, 5, 6,
+            0, 6, 7,
+        };
+        int firstVertex = vertices.Count;
+        for (int index = 0; index < face.Length; index++)
+        {
+            Vector3 transformed = leafTransform.MultiplyPoint3x4(face[index]);
+            vertices.Add(transformed);
+            vertices.Add(transformed);
+            float u = 0.5f + face[index].x;
+            float v = face[index].z / 1.15f;
+            uvs.Add(new Vector2(u, v));
+            uvs.Add(new Vector2(u, v));
+        }
+
+        for (int index = 0; index < front.Length; index += 3)
+        {
+            triangles.Add(firstVertex + (front[index] * 2));
+            triangles.Add(firstVertex + (front[index + 1] * 2));
+            triangles.Add(firstVertex + (front[index + 2] * 2));
+
+            triangles.Add(firstVertex + (front[index] * 2) + 1);
+            triangles.Add(firstVertex + (front[index + 2] * 2) + 1);
+            triangles.Add(firstVertex + (front[index + 1] * 2) + 1);
         }
     }
 
@@ -76,6 +143,9 @@ public static partial class HandmadeFincaAssets
             }
         }
 
+        List<Vector3> leafVertices = new();
+        List<Vector2> leafUvs = new();
+        List<int> leafTriangles = new();
         for (int rail = -1; rail <= 1; rail++)
         {
             float z = rail * halfDepth;
@@ -90,16 +160,23 @@ public static partial class HandmadeFincaAssets
 
             for (int leafIndex = -3; leafIndex <= 3; leafIndex++)
             {
-                GameObject leaf = CreateLeaf(
-                    rack.transform,
-                    "Hanging Cured Leaf",
+                Matrix4x4 leafTransform = Matrix4x4.TRS(
                     new Vector3(leafIndex * (width / 8f), 2.2f, z),
-                    curedLeaf);
-                leaf.transform.localRotation = Quaternion.Euler(90f, 2f * leafIndex, 0f);
-                leaf.transform.localScale = new Vector3(0.32f, 0.78f, 0.78f);
+                    Quaternion.Euler(90f, 2f * leafIndex, 0f),
+                    new Vector3(0.32f, 0.78f, 0.78f));
+                AppendLeafGeometry(leafTransform, leafVertices, leafUvs, leafTriangles);
             }
         }
 
+        GameObject hangingLeaves = CreateMeshObject(
+            "Combined Hanging Cured Leaves",
+            rack.transform,
+            Vector3.zero,
+            leafVertices.ToArray(),
+            leafTriangles.ToArray(),
+            leafUvs.ToArray(),
+            curedLeaf);
+        hangingLeaves.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
         return rack;
     }
 

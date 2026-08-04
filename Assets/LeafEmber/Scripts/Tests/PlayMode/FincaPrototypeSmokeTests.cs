@@ -64,6 +64,30 @@ public sealed class FincaPrototypeSmokeTests
         Assert.That(Object.FindFirstObjectByType<TastingTable>(), Is.Not.Null);
         Assert.That(Object.FindFirstObjectByType<CigarDevelopmentView>(), Is.Not.Null);
 
+        Renderer[] renderers =
+            Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None);
+        Light[] lights = Object.FindObjectsByType<Light>(FindObjectsSortMode.None);
+        int shadowedPointLights = 0;
+        foreach (Light light in lights)
+        {
+            if (light.type == LightType.Point && light.shadows != LightShadows.None)
+            {
+                shadowedPointLights++;
+            }
+        }
+
+        TestContext.WriteLine(
+            $"Finca performance budget: {renderers.Length} renderers, " +
+            $"{shadowedPointLights} shadowed point lights.");
+        Assert.That(
+            renderers.Length,
+            Is.LessThan(1000),
+            "The procedural finca exceeded its renderer budget.");
+        Assert.That(
+            shadowedPointLights,
+            Is.Zero,
+            "Decorative point lights must not multiply full-scene shadow passes.");
+
         ICalendarService calendar = GameServices.Registry.Resolve<ICalendarService>();
         IInventoryService inventory = GameServices.Registry.Resolve<IInventoryService>();
         IEstateService estate = GameServices.Registry.Resolve<IEstateService>();

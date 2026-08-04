@@ -1,12 +1,14 @@
 # Milestone 3A implementation: finca and player experience
 
-**Status:** Implemented and automated-test validated; hands-on gate pending
+**Status:** Automated-test validated; hands-on visual gate failed
 **Started:** 2026-08-03
 **Unity:** 6000.5.4f1
 
 Milestone 3A is a quality gate between the cigar-development prototype and the first commercial release. It responds directly to hands-on feedback that the finca remained too small, primitive, visually grayboxed, and difficult to understand.
 
 The first-release economy will not be layered on top of an unreadable prototype. The existing deterministic domain systems remain, while their spatial and player-facing presentation is rebuilt.
+
+The first 2026-08-03 hands-on review rejected this pass. The expanded layout and guidance do not compensate for primitive-derived architecture and props that still read as graybox art. The same review exposed an unacceptable performance regression caused by an excessive renderer count multiplied through shadow-casting point lights. The performance fault has been corrected and regression-tested; the visual gate remains failed.
 
 ## Success criteria
 
@@ -94,5 +96,14 @@ Milestone 3B may begin once automated validation passes and hands-on play confir
 - All 23 Edit Mode tests pass.
 - The Play Mode startup smoke test passes and verifies composition, guidance, direct interaction stations, landmark separation, authored surface loading, and registered domain state.
 - Render review covers the entry approach, central courtyard, estate overview, workshop side, and opening guidance.
+- The procedural scene is capped below 1,000 renderers and permits no shadow-casting point lights. The current validated build creates 910 renderers and zero shadowed point lights.
 
 Automated evidence prevents the layout, surface foundation, and guidance layer from silently disappearing. It cannot decide whether movement, atmosphere, readability, and pacing feel right in hand. That judgment remains the explicit hands-on gate before Milestone 3B.
+
+## Performance guardrails
+
+Repeated tobacco and landscape foliage must be combined into a small number of meshes rather than emitted as one renderer per leaf. Decorative lanterns may provide restrained local light but must not cast real-time shadows. The prototype caps directional-shadow distance at 55 meters with two cascades.
+
+Any future environment pass must keep the Play Mode performance-budget assertions green. A visually richer finca is not acceptable if it makes the interactive build unsafe or uncomfortable to run.
+
+The next visual attempt must use authored modular environment assets, production terrain and foliage, a coherent lighting setup, and measured LOD/culling. Runtime primitive assembly may remain only for invisible scaffolding and temporary interaction markers, not as the dominant visible art layer.
